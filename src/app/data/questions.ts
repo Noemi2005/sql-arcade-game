@@ -92,7 +92,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 6 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #6.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_6 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -109,7 +109,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 7 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #7.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_7 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -126,7 +126,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 8 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #8.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_8 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -143,7 +143,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 9 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #9.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_9 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -160,7 +160,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 10 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #10.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_10 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -177,7 +177,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 11 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #11.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_11 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -194,7 +194,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 12 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #12.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_12 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -211,7 +211,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 13 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #13.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_13 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -228,7 +228,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 14 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #14.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_14 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -245,7 +245,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 15 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #15.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_15 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -262,7 +262,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 16 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #16.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_16 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -279,7 +279,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 17 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #17.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_17 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -296,7 +296,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 18 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #18.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_18 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -313,7 +313,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 19 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #19.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_19 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -330,7 +330,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 20 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #20.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_20 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -347,7 +347,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 21 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #21.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_21 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -364,7 +364,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 22 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #22.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_22 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -381,7 +381,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 23 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #23.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_23 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -398,7 +398,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 24 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #24.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_24 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -415,7 +415,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Pregunta 25 sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #25.",
+    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
     "code": "CREATE TABLE demo_tab_25 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
     "options": [
       "La columna 'codigo' no permite duplicados ni valores nulos.",
@@ -458,7 +458,7 @@ export const QUESTIONS_DATA: Question[] = [
       "Ambas fechas deben pertenecer obligatoriamente al mismo mes."
     ],
     "correctAnswer": 0,
-    "explanation": "La expresión booleana dentro de CHECK evalúa que fecha_fin sea mayor o igual a fecha_inicio en cada registro de la tabla."
+    "explanation": "'fecha_fin' debe ser posterior o igual a 'fecha_inicio'."
   },
   {
     "id": 28,
@@ -483,7 +483,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 4 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c4 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -500,7 +500,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 5 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c5 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -517,7 +517,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 6 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c6 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -534,7 +534,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 7 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c7 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -551,7 +551,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 8 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c8 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -568,7 +568,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 9 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c9 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -585,7 +585,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 10 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c10 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -602,7 +602,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 11 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c11 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -619,7 +619,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 12 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c12 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -636,7 +636,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 13 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c13 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -653,7 +653,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 14 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c14 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -670,7 +670,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 15 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c15 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -687,7 +687,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 16 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c16 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -704,7 +704,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 17 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c17 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -721,7 +721,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 18 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c18 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -738,7 +738,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 19 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c19 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -755,7 +755,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 20 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c20 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -772,7 +772,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 21 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c21 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -789,7 +789,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 22 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c22 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -806,7 +806,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 23 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c23 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -823,7 +823,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 24 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c24 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -840,7 +840,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS",
     "difficulty": "hard",
     "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna (Ejercicio 25 de Constraints):",
+    "question": "Analiza la combinación de restricciones en la siguiente columna:",
     "code": "CREATE TABLE usuarios_c25 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
     "options": [
       "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
@@ -891,7 +891,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 3):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r3 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -908,7 +908,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 4):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r4 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -925,7 +925,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 5):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r5 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -942,7 +942,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 6):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r6 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -959,7 +959,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 7):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r7 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -976,7 +976,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 8):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r8 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -993,7 +993,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 9):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r9 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1010,7 +1010,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 10):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r10 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1027,7 +1027,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 11):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r11 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1044,7 +1044,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 12):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r12 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1061,7 +1061,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 13):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r13 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1078,7 +1078,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 14):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r14 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1095,7 +1095,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 15):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r15 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1112,7 +1112,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 16):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r16 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1129,7 +1129,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 17):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r17 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1146,7 +1146,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 18):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r18 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1163,7 +1163,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 19):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r19 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1180,7 +1180,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 20):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r20 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1197,7 +1197,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 21):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r21 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1214,7 +1214,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 22):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r22 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1231,7 +1231,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 23):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r23 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1248,7 +1248,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 24):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r24 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1265,7 +1265,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "RELACIONES Y FK",
     "difficulty": "hard",
     "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas (Caso 25):",
+    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
     "code": "CREATE TABLE pedidos_r25 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
     "options": [
       "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
@@ -1333,7 +1333,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 4):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1350,7 +1350,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 5):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1367,7 +1367,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 6):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1384,7 +1384,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 7):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1401,7 +1401,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 8):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1418,7 +1418,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 9):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1435,7 +1435,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 10):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1452,7 +1452,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 11):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1469,7 +1469,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 12):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1486,7 +1486,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 13):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1503,7 +1503,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 14):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1520,7 +1520,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 15):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1537,7 +1537,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 16):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1554,7 +1554,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 17):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1571,7 +1571,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 18):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1588,7 +1588,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 19):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1605,7 +1605,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 20):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1622,7 +1622,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 21):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1639,7 +1639,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 22):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1656,7 +1656,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 23):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1673,7 +1673,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 24):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1690,7 +1690,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "INTEGRIDAD REFERENCIAL",
     "difficulty": "hard",
     "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso 25):",
+    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
     "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
     "options": [
       "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
@@ -1707,7 +1707,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "¿Por qué es altamente recomendable asignar un nombre explícito a las restricciones utilizando la cláusula CONSTRAINT?",
+    "question": "¿Por qué es highly recomendable asignar un nombre explícito a las restricciones utilizando la cláusula CONSTRAINT?",
     "code": "CONSTRAINT pk_estudiante_curso PRIMARY KEY (estudiante_id, curso_id),\nCONSTRAINT chk_nota CHECK (nota >= 0 AND nota <= 10)",
     "options": [
       "Permite referenciar y eliminar o modificar la restricción de forma precisa mediante ALTER TABLE DROP CONSTRAINT <nombre>.",
@@ -1741,7 +1741,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 3):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n3 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_3 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_3 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1758,7 +1758,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 4):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n4 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_4 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_4 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1775,7 +1775,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 5):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n5 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_5 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_5 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1792,7 +1792,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 6):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n6 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_6 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_6 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1809,7 +1809,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 7):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n7 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_7 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_7 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1826,7 +1826,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 8):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n8 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_8 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_8 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1843,7 +1843,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 9):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n9 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_9 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_9 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1860,7 +1860,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 10):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n10 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_10 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_10 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1877,7 +1877,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 11):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n11 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_11 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_11 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1894,7 +1894,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 12):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n12 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_12 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_12 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1911,7 +1911,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 13):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n13 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_13 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_13 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1928,7 +1928,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 14):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n14 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_14 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_14 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1945,7 +1945,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 15):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n15 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_15 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_15 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1962,7 +1962,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 16):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n16 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_16 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_16 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1979,7 +1979,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 17):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n17 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_17 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_17 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -1996,7 +1996,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 18):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n18 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_18 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_18 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2013,7 +2013,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 19):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n19 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_19 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_19 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2030,7 +2030,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 20):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n20 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_20 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_20 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2047,7 +2047,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 21):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n21 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_21 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_21 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2064,7 +2064,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 22):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n22 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_22 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_22 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2081,7 +2081,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 23):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n23 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_23 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_23 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2098,7 +2098,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 24):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n24 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_24 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_24 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2115,7 +2115,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
     "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas (Ejemplo 25):",
+    "question": "Examina la sintaxis DDL con restricciones nombradas:",
     "code": "CREATE TABLE proyectos_n25 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_25 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_25 UNIQUE (codigo)\n);",
     "options": [
       "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
@@ -2183,7 +2183,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 4):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a4 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2200,7 +2200,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 5):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a5 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2217,7 +2217,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 6):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a6 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2234,7 +2234,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 7):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a7 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2251,7 +2251,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 8):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a8 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2268,7 +2268,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 9):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a9 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2285,7 +2285,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 10):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a10 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2302,7 +2302,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 11):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a11 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2319,7 +2319,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 12):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a12 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2336,7 +2336,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 13):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a13 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2353,7 +2353,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 14):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a14 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2370,7 +2370,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 15):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a15 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2387,7 +2387,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 16):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a16 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2404,7 +2404,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 17):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a17 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2421,7 +2421,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 18):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a18 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2438,7 +2438,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 19):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a19 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2455,7 +2455,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 20):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a20 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2472,7 +2472,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 21):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a21 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2489,7 +2489,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 22):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a22 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2506,7 +2506,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 23):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a23 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2523,7 +2523,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 24):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a24 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2540,7 +2540,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
     "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio 25):",
+    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
     "code": "ALTER TABLE productos_a25 DROP COLUMN codigo_barras;",
     "options": [
       "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
@@ -2566,7 +2566,7 @@ export const QUESTIONS_DATA: Question[] = [
       "El orden de eliminación no afecta a las claves foráneas."
     ],
     "correctAnswer": 0,
-    "explanation": "Al eliminar tablas con relaciones de integridad referencial, se debe eliminar primero la tabla mas HIJA ('ciudades') y al final la tabla PADRE principal ('paises'), procediendo desde las hojas hasta la raíz del árbol de dependencias."
+    "explanation": "Al eliminar tablas con relaciones de integridad referencial, se debe eliminar primero la tabla más HIJA ('ciudades') y al final la tabla PADRE principal ('paises'), procediendo desde las hojas hasta la raíz del árbol de dependencias."
   },
   {
     "id": 152,
@@ -2594,7 +2594,7 @@ export const QUESTIONS_DATA: Question[] = [
     "question": "¿Cuál es la diferencia fundamental entre ejecutar DROP TABLE usuarios; frente a ALTER TABLE usuarios DROP COLUMN correo;?",
     "code": "Opción A: DROP TABLE usuarios;\nOpción B: ALTER TABLE usuarios DROP COLUMN correo;",
     "options": [
-      "DROP TABLE destruye la tabla completa y toda su estructura; ALTER TABLE ... DROP COLUMN borra únicamente un atributo especifico de la tabla.",
+      "DROP TABLE destruye la tabla completa y toda su estructura; ALTER TABLE ... DROP COLUMN borra únicamente un atributo específico de la tabla.",
       "DROP TABLE borra solo las filas dejando la tabla vacía.",
       "ALTER TABLE DROP COLUMN borra la base de datos completa.",
       "Ambas sentencias producen exactamente el mismo resultado."
@@ -2608,7 +2608,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 4):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p4; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2625,7 +2625,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 5):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p5; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2642,7 +2642,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 6):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p6; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2659,7 +2659,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 7):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p7; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2676,7 +2676,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 8):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p8; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2693,7 +2693,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 9):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p9; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2710,7 +2710,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 10):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p10; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2727,7 +2727,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 11):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p11; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2744,7 +2744,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 12):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p12; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2761,7 +2761,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 13):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p13; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2778,7 +2778,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 14):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p14; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2795,7 +2795,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 15):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p15; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2812,7 +2812,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 16):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p16; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2829,7 +2829,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 17):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p17; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2846,7 +2846,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 18):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p18; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2863,7 +2863,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 19):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p19; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2880,7 +2880,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 20):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p20; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2897,7 +2897,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 21):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p21; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2914,7 +2914,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 22):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p22; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2931,7 +2931,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 23):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p23; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2948,7 +2948,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 24):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p24; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -2965,7 +2965,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DROP Y DEPENDENCIAS",
     "difficulty": "expert",
     "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso 25):",
+    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
     "code": "DROP TABLE categorias_p25; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
     "options": [
       "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
@@ -3033,7 +3033,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 4: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d4 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3050,7 +3050,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 5: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d5 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3067,7 +3067,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 6: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d6 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3084,7 +3084,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 7: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d7 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3101,7 +3101,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 8: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d8 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3118,7 +3118,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 9: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d9 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3135,7 +3135,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 10: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d10 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3152,7 +3152,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 11: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d11 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3169,7 +3169,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 12: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d12 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3186,7 +3186,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 13: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d13 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3203,7 +3203,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 14: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d14 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3220,7 +3220,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 15: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d15 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3237,7 +3237,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 16: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d16 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3254,7 +3254,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 17: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d17 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3271,7 +3271,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 18: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d18 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3288,7 +3288,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 19: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d19 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3305,7 +3305,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 20: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d20 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3322,7 +3322,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 21: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d21 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3339,7 +3339,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 22: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d22 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3356,7 +3356,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 23: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d23 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3373,7 +3373,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 24: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d24 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
@@ -3390,7 +3390,7 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "DDL DEBUGGER",
     "difficulty": "expert",
     "level": 8,
-    "question": "🐛 DDL DEBUGGER Reto 25: Analiza la siguiente instrucción DDL defectuosa:",
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
     "code": "ALTER TABLE usuarios_d25 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
     "options": [
       "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",

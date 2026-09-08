@@ -54,7 +54,7 @@ for i in range(25):
           "PRIMARY KEY exige unicidad y prohíbe explícitamente valores NULL (NOT NULL implícito o explícito). UNIQUE garantiza que los valores no se repitan, pero en el estándar SQL permite que existan valores NULL.")
     else:
         q(id_counter, "CREATE_TABLE", "CREATE TABLE", "medium", 1,
-          f"Pregunta {id_counter} sobre DDL Fundamental: Analiza la definición de tipos de datos y restricciones de columna en la tabla de demostración #{idx}.",
+          "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
           f"CREATE TABLE demo_tab_{idx} (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
           ["La columna 'codigo' no permite duplicados ni valores nulos.", "La columna 'codigo' permite múltiples valores NULL.", "La tabla contiene dos claves primarias distintas.", "El valor DEFAULT solo aplica cuando 'activo' es NULL."], 0,
           "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna.")
@@ -74,7 +74,7 @@ for i in range(25):
           "Analiza la siguiente restricción CHECK sobre un rango de fechas. ¿Qué condición debe cumplirse en la inserción?",
           "CREATE TABLE reservas (\n    id INT PRIMARY KEY,\n    fecha_inicio DATE NOT NULL,\n    fecha_fin DATE NOT NULL,\n    CHECK (fecha_fin >= fecha_inicio)\n);",
           ["'fecha_fin' debe ser posterior o igual a 'fecha_inicio'.", "'fecha_inicio' debe ser siempre la fecha actual del sistema.", "'fecha_fin' debe ser exactamente un año mayor a 'fecha_inicio'.", "Ambas fechas deben pertenecer obligatoriamente al mismo mes."], 0,
-          "La expresión booleana dentro de CHECK evalúa que fecha_fin sea mayor o igual a fecha_inicio en cada registro de la tabla.")
+          "'fecha_fin' debe ser posterior o igual a 'fecha_inicio'.")
     elif idx == 3:
         q(id_counter, "CHECK_UNIQUE_DEFAULT", "CONSTRAINTS", "hard", 2,
           "¿Qué sucede si una columna tiene la restricción CHECK (edad >= 18) y se intenta registrar un valor NULL en la columna 'edad' (siendo la columna opcional sin NOT NULL)?",
@@ -83,7 +83,7 @@ for i in range(25):
           "En el estándar SQL, las restricciones CHECK solo rechazan un registro si la condición evalúa a FALSE. Como (NULL >= 18) evalúa a UNKNOWN (no a FALSE), la verificación pasa a menos que exista la restricción NOT NULL.")
     else:
         q(id_counter, "CHECK_UNIQUE_DEFAULT", "CONSTRAINTS", "hard", 2,
-          f"Analiza la combinación de restricciones en la siguiente columna (Ejercicio {idx} de Constraints):",
+          "Analiza la combinación de restricciones en la siguiente columna:",
           f"CREATE TABLE usuarios_c{idx} (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
           ["'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.", "'email' permite duplicados si 'edad' es mayor a 18.", "'edad' es clave primaria secundaria.", "No se puede usar AND dentro de una restricción CHECK."], 0,
           "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos.")
@@ -106,7 +106,7 @@ for i in range(25):
           "Para crear una restricción FOREIGN KEY hacia una tabla referenciada, dicha tabla PADRE (y su clave primaria) DEBEN existir previamente en la base de datos.")
     else:
         q(id_counter, "FOREIGN_KEY", "RELACIONES Y FK", "hard", 3,
-          f"Identifica la clave referencial en la siguiente relación de tablas (Caso {idx}):",
+          "Identifica la clave referencial en la siguiente relación de tablas:",
           f"CREATE TABLE pedidos_r{idx} (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
           ["'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.", "'id' de 'pedidos' es la clave foránea.", "'clientes' es la tabla hija.", "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."], 0,
           "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'.")
@@ -135,7 +135,7 @@ for i in range(25):
           "RESTRICT (y NO ACTION) garantiza la integridad referencial bloqueando y rechazando cualquier intento de eliminar un registro padre que tenga registros hijos asociados.")
     else:
         q(id_counter, "REFERENTIAL_ACTIONS", "INTEGRIDAD REFERENCIAL", "hard", 4,
-          f"Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición (Caso {idx}):",
+          "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
           f"FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
           ["Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.", "Impide que se pueda modificar el id del autor.", "Elimina los libros cuando se actualiza el autor.", "Convierte la clave primaria del autor en NULL."], 0,
           "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre.")
@@ -146,7 +146,7 @@ for i in range(25):
     idx = i + 1
     if idx == 1:
         q(id_counter, "NAMED_CONSTRAINTS", "CONSTRAINTS NOMBRADAS", "hard", 5,
-          "¿Por qué es altamente recomendable asignar un nombre explícito a las restricciones utilizando la cláusula CONSTRAINT?",
+          "¿Por qué es highly recomendable asignar un nombre explícito a las restricciones utilizando la cláusula CONSTRAINT?",
           "CONSTRAINT pk_estudiante_curso PRIMARY KEY (estudiante_id, curso_id),\nCONSTRAINT chk_nota CHECK (nota >= 0 AND nota <= 10)",
           ["Permite referenciar y eliminar o modificar la restricción de forma precisa mediante ALTER TABLE DROP CONSTRAINT <nombre>.", "Es obligatorio para que la clave primaria funcione.", "Aumenta la velocidad de ejecución de las sentencias SELECT.", "Evita que la tabla ocupe espacio en disco."], 0,
           "Asignar nombres explícitos a las restricciones (CONSTRAINT nombre_restriccion TYPE) permite gestionarlas, deshabilitarlas o eliminarlas fácilmente con ALTER TABLE DROP CONSTRAINT sin depender de nombres generados por el SGBD.")
@@ -158,7 +158,7 @@ for i in range(25):
           "La Clave Primaria Compuesta PRIMARY KEY (alumno_id, materia_id) exige unicidad en la COMBINACIÓN de ambos valores. El par (101, 50) no puede repetirse independientemente del valor en 'semestre'.")
     else:
         q(id_counter, "NAMED_CONSTRAINTS", "CONSTRAINTS NOMBRADAS", "hard", 5,
-          f"Examina la sintaxis DDL con restricciones nombradas (Ejemplo {idx}):",
+          "Examina la sintaxis DDL con restricciones nombradas:",
           f"CREATE TABLE proyectos_n{idx} (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_{idx} PRIMARY KEY (id),\n    CONSTRAINT uq_cod_{idx} UNIQUE (codigo)\n);",
           ["Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.", "Crea dos claves primarias en la misma tabla.", "Sintaxis errónea por usar comas entre CONSTRAINT.", "La restricción UNIQUE no puede tener nombre explícito."], 0,
           "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL.")
@@ -187,7 +187,7 @@ for i in range(25):
           "La eliminación de una restricción nombrada se efectúa mediante ALTER TABLE <tabla> DROP CONSTRAINT <nombre_restriccion>.")
     else:
         q(id_counter, "ALTER_TABLE", "ALTER TABLE", "hard", 6,
-          f"Analiza la siguiente sentencia DDL de modificación de estructura (Ejercicio {idx}):",
+          "Analiza la siguiente sentencia DDL de modificación de estructura:",
           f"ALTER TABLE productos_a{idx} DROP COLUMN codigo_barras;",
           ["Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.", "Elimina la tabla 'productos' por completo.", "Borra solo el índice de la columna 'codigo_barras'.", "Renombra la columna a NULL."], 0,
           "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla.")
@@ -201,7 +201,7 @@ for i in range(25):
           "Se tienen tres tablas relacionadas: 'paises' (padre) -> 'provincias' (hija de paises) -> 'ciudades' (hija de provincias). ¿En qué orden DEBEN ELIMINARSE las tablas con DROP TABLE para evitar errores de clave foránea?",
           "paises <- provincias <- ciudades",
           ["1º ciudades, 2º provincias, 3º paises", "1º paises, 2º provincias, 3º ciudades", "1º provincias, 2º ciudades, 3º paises", "El orden de eliminación no afecta a las claves foráneas."], 0,
-          "Al eliminar tablas con relaciones de integridad referencial, se debe eliminar primero la tabla mas HIJA ('ciudades') y al final la tabla PADRE principal ('paises'), procediendo desde las hojas hasta la raíz del árbol de dependencias.")
+          "Al eliminar tablas con relaciones de integridad referencial, se debe eliminar primero la tabla más HIJA ('ciudades') y al final la tabla PADRE principal ('paises'), procediendo desde las hojas hasta la raíz del árbol de dependencias.")
     elif idx == 2:
         q(id_counter, "DROP_DEPENDENCIES", "DROP Y DEPENDENCIAS", "expert", 7,
           "En el mismo escenario de dependencias (paises -> provincias -> ciudades), ¿en qué orden DEBEN CREARSE las tablas con CREATE TABLE?",
@@ -212,11 +212,11 @@ for i in range(25):
         q(id_counter, "DROP_DEPENDENCIES", "DROP Y DEPENDENCIAS", "expert", 7,
           "¿Cuál es la diferencia fundamental entre ejecutar DROP TABLE usuarios; frente a ALTER TABLE usuarios DROP COLUMN correo;?",
           "Opción A: DROP TABLE usuarios;\nOpción B: ALTER TABLE usuarios DROP COLUMN correo;",
-          ["DROP TABLE destruye la tabla completa y toda su estructura; ALTER TABLE ... DROP COLUMN borra únicamente un atributo especifico de la tabla.", "DROP TABLE borra solo las filas dejando la tabla vacía.", "ALTER TABLE DROP COLUMN borra la base de datos completa.", "Ambas sentencias producen exactamente el mismo resultado."], 0,
+          ["DROP TABLE destruye la tabla completa y toda su estructura; ALTER TABLE ... DROP COLUMN borra únicamente un atributo específico de la tabla.", "DROP TABLE borra solo las filas dejando la tabla vacía.", "ALTER TABLE DROP COLUMN borra la base de datos completa.", "Ambas sentencias producen exactamente el mismo resultado."], 0,
           "DROP TABLE destruye el objeto tabla completo de la base de datos. ALTER TABLE DROP COLUMN remueve una sola columna manteniendo la tabla y sus demás atributos.")
     else:
         q(id_counter, "DROP_DEPENDENCIES", "DROP Y DEPENDENCIAS", "expert", 7,
-          f"Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE (Caso {idx}):",
+          "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
           f"DROP TABLE categorias_p{idx}; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
           ["El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).", "Eliminará automáticamente la tabla 'productos' también.", "Convertirá a la tabla 'productos' en tabla independiente sin avisar.", "Renombrará la tabla a 'categorias_deleted'."], 0,
           "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales.")
@@ -250,7 +250,7 @@ for i in range(25):
           "La primera opción define impecablemente 'iban' como PRIMARY KEY, aplica el CHECK (saldo >= 0) para evitar valores negativos y establece 'EUR' como DEFAULT para la columna 'moneda'.")
     else:
         q(id_counter, "DDL_DEBUGGER", "DDL DEBUGGER", "expert", 8,
-          f"🐛 DDL DEBUGGER Reto {idx}: Analiza la siguiente instrucción DDL defectuosa:",
+          "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
           f"ALTER TABLE usuarios_d{idx} ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
           ["No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.", "ALTER TABLE no admite la palabra ADD CONSTRAINT.", "CHECK debe ir escrito en minúsculas.", "Falta la palabra COLUMN antes de CHECK."], 0,
           "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...).")
