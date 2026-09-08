@@ -1,0 +1,25 @@
+<main class="min-h-screen arcade-bg-grid text-slate-100 relative overflow-x-hidden select-none flex flex-col justify-between">
+
+  <!-- Floating SQL Watermarks Decoration -->
+  <div class="sql-watermark top-10 left-[8%] text-3xl hidden lg:block">CREATE TABLE</div>
+  <div class="sql-watermark top-24 right-[10%] text-2xl hidden lg:block">ALTER TABLE</div>
+  <div class="sql-watermark bottom-36 left-[5%] text-2xl hidden lg:block">PRIMARY KEY</div>
+  <div class="sql-watermark bottom-16 right-[8%] text-3xl hidden lg:block">FOREIGN KEY</div>
+  <div class="sql-watermark top-[45%] left-[2%] text-xl hidden xl:block">DROP TABLE</div>
+  <div class="sql-watermark top-[50%] right-[3%] text-xl hidden xl:block">CHECK (CONSTRAINT)</div>
+
+  <!-- CRT Scanlines Overlay -->
+  <app-crt-overlay></app-crt-overlay>
+
+  <!-- Active Screen View Container -->
+  <div class="w-full flex-grow relative z-10">
+    <ng-container [ngSwitch]="gameService.screen()">
+      <app-home *ngSwitchCase="'HOME'"></app-home>
+      <app-game *ngSwitchCase="'GAME'"></app-game>
+      <app-game-over *ngSwitchCase="'GAME_OVER'"></app-game-over>
+      <app-records *ngSwitchCase="'RECORDS'"></app-records>
+      <app-categories *ngSwitchCase="'CATEGORIES'"></app-categories>
+    </ng-container>
+  </div>
+
+</main>

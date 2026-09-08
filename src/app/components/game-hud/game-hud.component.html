@@ -1,0 +1,63 @@
+<div class="w-full bg-[#080614]/95 border border-[#00f0ff]/30 rounded-2xl p-5 mb-6 backdrop-blur-md shadow-[0_0_25px_rgba(0,240,255,0.12)] space-y-5 select-none">
+  
+  <!-- Top Row: Lives, Streak, Level, Score -->
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    
+    <!-- Lives Display -->
+    <div class="flex items-center gap-2 bg-[#04030a] px-4 py-2.5 rounded-xl border border-[#ff007a]/40 shadow-[0_0_15px_rgba(255,0,122,0.15)]">
+      <span class="text-xs text-slate-400 font-title font-bold mr-1 hidden sm:inline">VIDAS:</span>
+      <div class="flex gap-2 text-xl">
+        <span *ngFor="let heart of heartArray(); let i = index" 
+              [class.animate-pulse-heart]="heart"
+              class="transition-all duration-300">
+          {{ heart ? '❤️' : '💔' }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Streak Combo Badge -->
+    <div class="flex items-center gap-2 px-4 py-2.5 rounded-xl border bg-[#04030a] shadow-sm"
+         [ngClass]="{
+           'border-[#ffe600]/60 text-[#ffe600] glow-text-yellow shadow-[0_0_15px_rgba(255,230,0,0.25)]': gameService.streak() >= 3,
+           'border-[#ff007a]/60 text-[#ff007a] glow-text-pink shadow-[0_0_15px_rgba(255,0,122,0.25)]': gameService.streak() >= 5,
+           'border-slate-800 text-slate-400': gameService.streak() < 3
+         }">
+      <span class="font-arcade text-xs">🔥</span>
+      <span class="font-title font-extrabold text-xs sm:text-sm">RACHA x{{ gameService.streak() }}</span>
+    </div>
+
+    <!-- Level Badge -->
+    <div class="flex items-center gap-2 bg-[#04030a] px-4 py-2.5 rounded-xl border border-[#00f0ff]/40 shadow-[0_0_15px_rgba(0,240,255,0.15)]">
+      <span class="text-xs text-slate-400 font-title font-bold">NIVEL</span>
+      <span class="text-[#00f0ff] font-title font-extrabold text-base sm:text-lg glow-text-cyan">{{ gameService.level() }}</span>
+    </div>
+
+    <!-- Score Badge -->
+    <div class="flex items-center gap-2.5 bg-[#04030a] px-4 py-2.5 rounded-xl border border-[#ffe600]/50 shadow-[0_0_15px_rgba(255,230,0,0.2)]">
+      <span class="text-[#ffe600] font-arcade text-xs">⭐</span>
+      <span class="text-white font-title font-black text-base sm:text-xl glow-text-yellow">{{ gameService.score() }}</span>
+    </div>
+
+  </div>
+
+  <!-- Timer Section (35 Segundos Estrictos) -->
+  <div class="w-full bg-[#04030a] rounded-xl p-3.5 border border-slate-800 flex items-center gap-4">
+    <div class="font-arcade text-xs sm:text-sm whitespace-nowrap min-w-[90px] tracking-wider text-slate-200"
+         [class.timer-urgent]="gameService.timeRemaining() <= 7">
+      ⏱️ {{ gameService.timeRemaining() }}s
+    </div>
+
+    <!-- Timer Progress Bar -->
+    <div class="w-full bg-slate-900/90 h-4 rounded-full overflow-hidden p-0.5 border border-slate-700/80 shadow-inner">
+      <div class="h-full rounded-full transition-all duration-1000 linear shadow-md"
+           [style.width.%]="timerPercentage()"
+           [ngClass]="{
+             'bg-gradient-to-r from-emerald-500 to-[#00f0ff]': gameService.timeRemaining() > 12,
+             'bg-gradient-to-r from-amber-500 to-[#ffe600]': gameService.timeRemaining() <= 12 && gameService.timeRemaining() > 7,
+             'bg-gradient-to-r from-red-600 to-[#ff007a] animate-pulse': gameService.timeRemaining() <= 7
+           }">
+      </div>
+    </div>
+  </div>
+
+</div>

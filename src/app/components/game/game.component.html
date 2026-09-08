@@ -1,0 +1,39 @@
+<div class="min-h-screen flex flex-col items-center justify-start py-6 px-4 sm:px-6 md:px-8 relative z-10 max-w-[1100px] mx-auto space-y-6 select-none">
+  
+  <!-- Top Action Bar -->
+  <div class="w-full flex justify-between items-center mb-2">
+    <button 
+      (click)="confirmQuit()" 
+      class="text-xs sm:text-sm font-title bg-[#080614]/90 border border-slate-800 hover:border-[#ff007a]/60 px-5 py-2.5 rounded-xl text-slate-400 hover:text-[#ff007a] transition-all flex items-center gap-2 cursor-pointer shadow-md">
+      <span>🚪 ABANDONAR PARTIDA</span>
+    </button>
+
+    <div class="text-xs sm:text-sm font-arcade text-[#00f0ff] tracking-wider glow-text-cyan bg-[#04030a]/90 px-5 py-2.5 rounded-xl border border-[#00f0ff]/30 shadow-[0_0_15px_rgba(0,240,255,0.15)]">
+      PREGUNTA {{ gameService.currentIndex() + 1 }} / {{ gameService.questions().length }}
+    </div>
+  </div>
+
+  <!-- HUD Header -->
+  <app-game-hud class="w-full"></app-game-hud>
+
+  <!-- Question Content Container -->
+  <div *ngIf="gameService.currentQuestion() as q" class="w-full space-y-6">
+    
+    <app-question-card 
+      [question]="q"
+      [questionIndex]="gameService.currentIndex()">
+    </app-question-card>
+
+    <app-answer-option
+      [options]="q.options"
+      [selectedOption]="gameService.selectedOption()"
+      [correctAnswer]="q.correctAnswer"
+      [isSubmitted]="gameService.isAnswerSubmitted()"
+      (optionSelected)="gameService.selectOption($event)">
+    </app-answer-option>
+
+    <app-feedback></app-feedback>
+
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 relative z-10 select-none">
+  
+  <div class="w-full max-w-[1100px] mx-auto arcade-stage p-8 sm:p-12 text-center flex flex-col items-center relative overflow-hidden">
+    
+    <div class="tech-corner tech-corner-tl"></div>
+    <div class="tech-corner tech-corner-tr"></div>
+    <div class="tech-corner tech-corner-bl"></div>
+    <div class="tech-corner tech-corner-br"></div>
+
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-title font-black text-[#00f0ff] mb-2 glow-text-cyan flex items-center justify-center gap-3">
+      <span>📚 NIVELES Y DIFICULTAD</span>
+    </h1>
+    <p class="text-slate-400 font-arcade text-xs mb-10 tracking-widest text-[#ffe600]">
+      PROGRESIÓN DE NIVELES DDL DENTRO DEL ARCADE
+    </p>
+
+    <!-- Levels Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-10 text-left">
+      
+      <div *ngFor="let lvl of levelList" class="bg-[#05030a]/95 p-5 rounded-2xl border border-slate-800 hover:border-[#00f0ff]/60 transition-all flex flex-col justify-between shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-arcade text-[#ff007a]">NIVEL {{ lvl.level }}</span>
+            <span class="text-[9px] font-title font-bold px-2 py-0.5 rounded bg-[#0a0718] border border-slate-700 text-slate-300">{{ lvl.tag }}</span>
+          </div>
+          <h3 class="font-title font-bold text-white text-base mb-2">{{ lvl.title }}</h3>
+          <p class="font-body text-xs text-slate-400 leading-relaxed mb-4">{{ lvl.desc }}</p>
+        </div>
+        <div class="text-[10px] font-code text-[#00f0ff] bg-[#05030c] p-2.5 rounded-xl border border-slate-800">
+          <code>{{ lvl.codeSnippet }}</code>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-5 w-full justify-center max-w-md">
+      <button (click)="gameService.startNewGame()" class="arcade-start-btn w-full min-w-0 min-h-[60px] text-xs py-4">
+        <span>🕹️ PRESS START</span>
+      </button>
+
+      <button (click)="gameService.goToHome()" class="arcade-btn w-full text-sm py-4">
+        <span>🏠 INICIO</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>

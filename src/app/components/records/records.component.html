@@ -1,0 +1,60 @@
+<div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 relative z-10 select-none">
+  
+  <div class="w-full max-w-[1100px] mx-auto arcade-stage p-8 sm:p-12 text-center flex flex-col items-center relative overflow-hidden">
+    
+    <div class="tech-corner tech-corner-tl"></div>
+    <div class="tech-corner tech-corner-tr"></div>
+    <div class="tech-corner tech-corner-bl"></div>
+    <div class="tech-corner tech-corner-br"></div>
+
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-title font-black text-[#ffe600] mb-2 glow-text-yellow flex items-center justify-center gap-3">
+      <span>🏆 HALL OF FAME</span>
+    </h1>
+    <p class="text-slate-400 font-arcade text-xs mb-10 tracking-widest text-[#00f0ff]">
+      HIGH SCORES & LOCAL RECORDS
+    </p>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mb-10">
+      
+      <div class="bg-[#05030a]/95 p-6 rounded-2xl border border-[#ffe600]/40 flex justify-between items-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <span class="text-sm text-slate-300 font-title font-bold">PUNTUACIÓN MÁXIMA</span>
+        <span class="text-2xl font-arcade text-[#ffe600] glow-text-yellow">{{ records().highScore }} PTS</span>
+      </div>
+
+      <div class="bg-[#05030a]/95 p-6 rounded-2xl border border-[#ff007a]/40 flex justify-between items-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <span class="text-sm text-slate-300 font-title font-bold">MEJOR RACHA</span>
+        <span class="text-2xl font-arcade text-[#ff007a] glow-text-pink">🔥 x{{ records().bestStreak }}</span>
+      </div>
+
+      <div class="bg-[#05030a]/95 p-6 rounded-2xl border border-[#00f0ff]/40 flex justify-between items-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <span class="text-sm text-slate-300 font-title font-bold">NIVEL MÁS ALTO</span>
+        <span class="text-2xl font-arcade text-[#00f0ff] glow-text-cyan">NIVEL {{ records().highestLevel }}</span>
+      </div>
+
+      <div class="bg-[#05030a]/95 p-6 rounded-2xl border border-[#00ff9c]/40 flex justify-between items-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <span class="text-sm text-slate-300 font-title font-bold">PARTIDAS JUGADAS</span>
+        <span class="text-2xl font-arcade text-[#00ff9c] glow-text-green">{{ records().gamesPlayed }}</span>
+      </div>
+
+      <div class="bg-[#05030a]/95 p-6 rounded-2xl border border-slate-700 sm:col-span-2 flex justify-between items-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
+        <span class="text-sm text-slate-300 font-title font-bold">TOTAL RESPUESTAS CORRECTAS</span>
+        <span class="text-2xl font-arcade text-white">✓ {{ records().totalCorrect }}</span>
+      </div>
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-5 w-full justify-center max-w-lg">
+      <button (click)="gameService.goToHome()" class="arcade-btn arcade-btn-yellow w-full text-sm py-4">
+        <span>🏠 REGRESAR AL ARCADE</span>
+      </button>
+
+      <button (click)="resetRecords()" class="arcade-btn arcade-btn-pink text-xs py-4 opacity-80 hover:opacity-100">
+        <span>🗑️ BORRAR RÉCORDS</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>
