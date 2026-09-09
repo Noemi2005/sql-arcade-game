@@ -833,5 +833,262 @@ export const QUESTIONS_DATA: Question[] = [
     ],
     "correctAnswer": 0,
     "explanation": "La tabla 'clientes' debe crearse en primer lugar para que la clave primaria 'clientes(id)' esté disponible cuando 'cuentas' defina su clave foránea apuntando a ella."
+  },
+
+  // --- LEVEL 10: DESAFÍOS DDL EXTREMOS (SINTAXIS SQL PURA) ---
+  {
+    "id": 49,
+    "category": "PRIMARY_KEY",
+    "categoryLabel": "PRIMARY KEY NOMBRADA",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Quieres crear la tabla 'proyectos' definiendo la clave primaria sobre la columna 'id' con el nombre explícito 'pk_proyectos'. ¿Cuál opción utiliza la sintaxis DDL correcta a nivel de tabla?",
+    "code": "-- Selección de sintaxis para PRIMARY KEY nombrada",
+    "options": [
+      "CREATE TABLE proyectos (\n    id INT,\n    CONSTRAINT pk_proyectos PRIMARY KEY (id)\n);",
+      "CREATE TABLE proyectos (\n    id INT,\n    PRIMARY KEY CONSTRAINT pk_proyectos (id)\n);",
+      "CREATE TABLE proyectos (\n    id INT,\n    CONSTRAINT PRIMARY KEY pk_proyectos (id)\n);",
+      "CREATE TABLE proyectos (\n    id INT,\n    pk_proyectos PRIMARY KEY (id)\n);"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La sintaxis correcta a nivel de tabla exige colocar primero la palabra reservada CONSTRAINT, seguida del nombre asignado a la restricción (pk_proyectos) y posteriormente el tipo de restricción PRIMARY KEY (columna)."
+  },
+  {
+    "id": 50,
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "UNIQUE NOMBRADA",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Se requiere asignar un identificador único nombrado 'uq_usuarios_email' sobre la columna 'email' en la tabla 'usuarios'. ¿Cuál fragmento SQL define correctamente esta restricción?",
+    "code": "-- Definición a nivel de tabla con CONSTRAINT",
+    "options": [
+      "CONSTRAINT uq_usuarios_email UNIQUE (email)",
+      "UNIQUE uq_usuarios_email CONSTRAINT (email)",
+      "CONSTRAINT UNIQUE uq_usuarios_email (email)",
+      "uq_usuarios_email UNIQUE CONSTRAINT (email)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Para nombrar una restricción de unicidad a nivel de tabla debe utilizarse CONSTRAINT <nombre_restriccion> UNIQUE (<columna>). Las demás opciones invierten o alteran el orden estricto de palabras clave en SQL."
+  },
+  {
+    "id": 51,
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY CON CONSTRAINT",
+    "difficulty": "expert",
+     level: 10,
+    "question": "Deseas vincular la columna 'cliente_id' de la tabla 'pedidos' con la clave primaria 'clientes(id)' mediante una clave foránea nombrada 'fk_pedidos_cliente'. ¿Cuál sintaxis DDL es la correcta?",
+    "code": "-- Clave Foránea a nivel de tabla",
+    "options": [
+      "CONSTRAINT fk_pedidos_cliente\nFOREIGN KEY (cliente_id)\nREFERENCES clientes(id)",
+      "FOREIGN KEY CONSTRAINT fk_pedidos_cliente\n(cliente_id) REFERENCES clientes(id)",
+      "CONSTRAINT fk_pedidos_cliente\nREFERENCES clientes(id)\nFOREIGN KEY (cliente_id)",
+      "CONSTRAINT fk_pedidos_cliente\nFOREIGN KEY REFERENCES clientes(id) (cliente_id)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "El orden estándar en DDL es: CONSTRAINT <nombre> FOREIGN KEY (<columna_local>) REFERENCES <tabla_padre>(<columna_padre>)."
+  },
+  {
+    "id": 52,
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY EN LÍNEA",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "En la tabla 'facturas', deseas definir la columna 'sucursal_id' como clave foránea en línea (forma corta) que referencie a 'sucursales(id)'. ¿Cuál opción es la sintácticamente válida?",
+    "code": "-- Restricción de columna (en línea)",
+    "options": [
+      "sucursal_id INT REFERENCES sucursales(id)",
+      "sucursal_id INT FOREIGN KEY sucursales(id)",
+      "sucursal_id INT FOREIGN KEY REFERENCES sucursales(id)",
+      "sucursal_id INT REFERENCES (sucursales.id)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A nivel de columna (inline), la sintaxis corta omite las palabras 'FOREIGN KEY' y utiliza directamente REFERENCES nombre_tabla(columna)."
+  },
+  {
+    "id": 53,
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "CHECK NOMBRADO",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Debes asegurar que el valor de 'descuento' esté en el rango de 0 a 50 en la tabla 'ofertas', nombrando la restricción 'chk_ofertas_descuento'. ¿Cuál opción declara correctamente la restricción?",
+    "code": "-- Sintaxis CHECK con expresión lógica",
+    "options": [
+      "CONSTRAINT chk_ofertas_descuento CHECK (descuento >= 0 AND descuento <= 50)",
+      "CHECK CONSTRAINT chk_ofertas_descuento (descuento BETWEEN 0 AND 50)",
+      "CONSTRAINT chk_ofertas_descuento CHECK descuento BETWEEN 0 AND 50",
+      "CONSTRAINT CHECK chk_ofertas_descuento (descuento >= 0 AND descuento <= 50)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La restricción CHECK exige que la condición vaya delimitada obligatoriamente entre paréntesis después de la palabra clave CHECK: CONSTRAINT nombre CHECK (condicion)."
+  },
+  {
+    "id": 54,
+    "category": "CREATE_TABLE",
+    "categoryLabel": "CREATE TABLE COMPLETO",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "¿Cuál de las siguientes declaraciones CREATE TABLE está completamente correcta y libre de errores sintácticos?",
+    "code": "-- Evaluación de script DDL completo",
+    "options": [
+      "CREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    email VARCHAR(100) UNIQUE,\n    salario DECIMAL(10,2) CHECK (salario > 0)\n);",
+      "CREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    email UNIQUE VARCHAR(100),\n    salario DECIMAL(10,2) CHECK salario > 0\n);",
+      "CREATE TABLE empleados (\n    id PRIMARY KEY INT,\n    email VARCHAR(100) UNIQUE,\n    salario CHECK DECIMAL(10,2) (> 0)\n);",
+      "CREATE TABLE empleados (\n    id INT KEY PRIMARY,\n    email VARCHAR(100) ONLY,\n    salario DECIMAL(10,2) CHECK (salario > 0);\n);"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La opción A mantiene el tipo de dato seguido de sus respectivas restricciones (PRIMARY KEY, UNIQUE) y encierra correctamente entre paréntesis la condición del CHECK."
+  },
+  {
+    "id": 55,
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "COMPARACIÓN DE SINTAXIS",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Se requiere transformar la restricción corta 'codigo VARCHAR(20) UNIQUE' a una restricción explícita de tabla nombrada 'uq_prod_codigo'. ¿Cuál es la equivalencia exacta?",
+    "code": "-- Transformación a restricción nombrada",
+    "options": [
+      "codigo VARCHAR(20),\nCONSTRAINT uq_prod_codigo UNIQUE (codigo)",
+      "codigo VARCHAR(20),\nUNIQUE CONSTRAINT uq_prod_codigo (codigo)",
+      "codigo VARCHAR(20) CONSTRAINT UNIQUE uq_prod_codigo",
+      "codigo VARCHAR(20),\nCONSTRAINT uq_prod_codigo (codigo) UNIQUE"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La forma equivalente a nivel de tabla define primero la columna (codigo VARCHAR(20)), seguida por una coma y la declaración CONSTRAINT uq_prod_codigo UNIQUE (codigo)."
+  },
+  {
+    "id": 56,
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "COMPLETAR CÓDIGO DDL",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Analiza la siguiente instrucción incompleta. ¿Qué palabra clave debe ir en la línea en blanco para asignar nombre a la restricción?",
+    "code": "CREATE TABLE detalles_orden (\n    orden_id INT,\n    producto_id INT,\n    _________ fk_detalles_producto\n        FOREIGN KEY (producto_id) REFERENCES productos(id)\n);",
+    "options": [
+      "CONSTRAINT",
+      "FOREIGN KEY",
+      "REFERENCE",
+      "RESTRICTION"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La palabra clave CONSTRAINT precede al identificador que el desarrollador asigna a cualquier restricción (PK, FK, UNIQUE, CHECK) en SQL."
+  },
+  {
+    "id": 57,
+    "category": "PRIMARY_KEY",
+    "categoryLabel": "PRIMARY KEY COMPUESTA",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "En la tabla 'inscripciones', la clave primaria debe estar conformada obligatoriamente por la combinación de 'estudiante_id' y 'curso_id'. ¿Cuál es la sintaxis correcta?",
+    "code": "-- Declaración de clave primaria compuesta",
+    "options": [
+      "CONSTRAINT pk_inscripciones PRIMARY KEY (estudiante_id, curso_id)",
+      "estudiante_id INT PRIMARY KEY, curso_id INT PRIMARY KEY",
+      "CONSTRAINT pk_inscripciones PRIMARY KEY (estudiante_id AND curso_id)",
+      "PRIMARY KEY (estudiante_id) AND PRIMARY KEY (curso_id)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Las claves primarias compuestas no pueden declararse en línea por separado. Deben definirse a nivel de tabla listando las columnas separadas por coma entre paréntesis: PRIMARY KEY (col1, col2)."
+  },
+  {
+    "id": 58,
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIÓN NOT NULL",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Deseas definir la columna 'titulo' como obligatoria sin permitir valores nulos. ¿Cuál fragmento SQL representa la sintaxis DDL correcta?",
+    "code": "-- Definición de columna NOT NULL",
+    "options": [
+      "titulo VARCHAR(150) NOT NULL",
+      "titulo VARCHAR(150) REQUIRED",
+      "CONSTRAINT nn_titulo NOT NULL (titulo)",
+      "NOT NULL titulo VARCHAR(150)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NOT NULL se especifica directamente en la definición de la columna a continuación de su tipo de dato. En la mayoría de motores SQL no puede definirse como restricción de tabla separada con paréntesis."
+  },
+  {
+    "id": 59,
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "CHECK MULTICONDICIÓN",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "En la tabla 'empleados', se exige validar que el 'salario' sea mayor a 1000 Y la 'comision' sea mayor o igual a 0. ¿Cuál restricción CHECK es sintácticamente correcta?",
+    "code": "-- Expresión lógica compuesta en CHECK",
+    "options": [
+      "CONSTRAINT chk_emp_sueldo CHECK (salario > 1000 AND comision >= 0)",
+      "CONSTRAINT chk_emp_sueldo CHECK (salario > 1000, comision >= 0)",
+      "CONSTRAINT chk_emp_sueldo CHECK salario > 1000 AND CHECK comision >= 0",
+      "CHECK CONSTRAINT chk_emp_sueldo (salario > 1000 AND comision >= 0)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dentro de los paréntesis del CHECK se utilizan los operadores lógicos estándar como AND o OR para combinar múltiples condiciones sobre una o varias columnas."
+  },
+  {
+    "id": 60,
+    "category": "CREATE_TABLE",
+    "categoryLabel": "ESTRUCTURA RELACIONAL AVANZADA",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Necesitas crear la tabla 'subcategorias' con una restricción UNIQUE nombrada y una clave foránea nombrada referenciando a 'categorias(id)'. ¿Cuál script es totalmente correcto?",
+    "code": "-- Script DDL con múltiples restricciones nombradas",
+    "options": [
+      "CREATE TABLE subcategorias (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50) NOT NULL,\n    categoria_id INT NOT NULL,\n    CONSTRAINT uq_subcat_nombre UNIQUE (nombre),\n    CONSTRAINT fk_subcat_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id)\n);",
+      "CREATE TABLE subcategorias (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50) NOT NULL,\n    categoria_id INT NOT NULL,\n    CONSTRAINT UNIQUE uq_subcat_nombre (nombre),\n    CONSTRAINT FOREIGN KEY fk_subcat_categoria (categoria_id) REFERENCES categorias(id)\n);",
+      "CREATE TABLE subcategorias (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50) UNIQUE uq_subcat_nombre,\n    categoria_id INT FOREIGN KEY fk_subcat_categoria REFERENCES categorias(id)\n);",
+      "CREATE TABLE subcategorias (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50) NOT NULL,\n    categoria_id INT NOT NULL,\n    uq_subcat_nombre UNIQUE (nombre),\n    fk_subcat_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id)\n);"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La opción A define correctamente ambas restricciones a nivel de tabla utilizando la palabra CONSTRAINT seguida del nombre y luego el tipo de restricción con sus argumentos correspondientes."
+  },
+  {
+    "id": 61,
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "COMPLETAR SINTAXIS REFERENCES",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Observa la instrucción DDL incompleta. ¿Cuál palabra clave debe insertarse en el espacio en blanco para vincular la clave foránea a la tabla de origen?",
+    "code": "CREATE TABLE pedidos (\n    id INT PRIMARY KEY,\n    usuario_id INT,\n    CONSTRAINT fk_pedidos_usuario\n        FOREIGN KEY (usuario_id) _________ usuarios(id)\n);",
+    "options": [
+      "REFERENCES",
+      "FOREIGN",
+      "TO_TABLE",
+      "RELATION"
+    ],
+    "correctAnswer": 0,
+    "explanation": "La cláusula REFERENCES indica la tabla externa y la columna primaria que actúa como destino en la relación de clave foránea."
+  },
+  {
+    "id": 62,
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "INLINE VS TABLE FOREIGN KEY",
+    "difficulty": "expert",
+    "level": 10,
+    "question": "Se requiere establecer una relación entre 'proveedor_id' y la tabla 'proveedores(id)'. ¿Cuál fragmento a nivel de columna (en línea) es correcto?",
+    "code": "-- Comparación de sintaxis en clave foránea corta",
+    "options": [
+      "proveedor_id INT REFERENCES proveedores(id)",
+      "proveedor_id INT FOREIGN KEY (proveedores.id)",
+      "proveedor_id INT FOREIGN KEY REFERENCES proveedores(id)",
+      "proveedor_id FOREIGN KEY (proveedor_id) REFERENCES proveedores(id)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Al definir una clave foránea en la misma línea de la columna, se coloca el tipo de dato seguido directamente por REFERENCES tabla_destino(columna_destino)."
+  },
+  {
+    "id": 63,
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "CORRECCIÓN DE ERRORES SINTÁCTICOS",
+    "difficulty": "expert",
+    level: 10,
+    "question": "El siguiente script produce errores sintácticos. ¿Cuál es la versión corregida que añade la coma divisoria faltante y la columna de referencia?",
+    code: "-- Código con errores:\nCREATE TABLE inventario (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(30) UNIQUE NOT NULL,\n    stock INT CHECK (stock >= 0)\n    CONSTRAINT fk_inv_tienda FOREIGN KEY (tienda_id) REFERENCES tiendas(id)\n);",
+    options: [
+      "CREATE TABLE inventario (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(30) UNIQUE NOT NULL,\n    stock INT CHECK (stock >= 0),\n    tienda_id INT,\n    CONSTRAINT fk_inv_tienda FOREIGN KEY (tienda_id) REFERENCES tiendas(id)\n);",
+      "CREATE TABLE inventario (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(30) UNIQUE NOT NULL,\n    stock INT CHECK stock >= 0\n    tienda_id INT CONSTRAINT fk_inv_tienda FOREIGN KEY REFERENCES tiendas(id)\n);",
+      "CREATE TABLE inventario (\n    id INT PRIMARY KEY,\n    codigo UNIQUE NOT NULL VARCHAR(30),\n    stock INT CHECK (stock >= 0),\n    tienda_id INT FOREIGN KEY (tienda_id) REFERENCES tiendas(id)\n);",
+      "CREATE TABLE inventario (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(30) UNIQUE NOT NULL,\n    stock INT CHECK (stock >= 0)\n    tienda_id INT REFERENCES tiendas(id)\n);"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Para solucionar el script se requiere: 1) agregar la coma separadora tras la columna stock, 2) declarar la columna tienda_id INT antes de hacer referencia a ella en la restricción FOREIGN KEY."
   }
 ];

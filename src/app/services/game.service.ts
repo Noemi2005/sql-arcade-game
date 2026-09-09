@@ -174,7 +174,7 @@ export class GameService {
       this.score.update(s => s + pointsEarned);
 
       // Progresión de nivel
-      const nextLevel = Math.min(8, Math.floor(this.questionsAnswered() / 3) + 1);
+      const nextLevel = Math.min(10, Math.floor(this.questionsAnswered() / 3) + 1);
       if (nextLevel > this.level()) {
         this.level.set(nextLevel);
         this.soundService.playLevelUp();

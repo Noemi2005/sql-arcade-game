@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { GameService } from '../../services/game.service';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { GameService } from "../../services/game.service";
 
 @Component({
-  selector: 'app-categories',
+  selector: "app-categories",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './categories.component.html'
+  templateUrl: "./categories.component.html"
 })
 export class CategoriesComponent {
   levelList = [
@@ -72,6 +72,13 @@ export class CategoriesComponent {
       title: "DDL Debugger",
       desc: "Detección de errores sintácticos y conceptuales complejos en scripts de código SQL real.",
       codeSnippet: "🐛 DDL DEBUGGER RETOS"
+    },
+    {
+      level: 10,
+      tag: "DESAFÍO EXTREMO",
+      title: "Sintaxis DDL Pura",
+      desc: "Sintaxis estricta de CREATE TABLE, opciones en código, restricciones nombradas y en línea.",
+      codeSnippet: "⚡ RETOS SINTAXIS EXTREMA"
     }
   ];
 
