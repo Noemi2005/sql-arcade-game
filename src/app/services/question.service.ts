@@ -28,10 +28,11 @@ export class QuestionService {
 
   /**
    * Shuffles an array of questions, and for each question, shuffles its 4 options
-   * while accurately maintaining the correct answer index!
+   * while accurately maintaining the correct answer index! Also deduplicates questions by text.
    */
   private shuffleAndPrepareQuestions(questions: Question[]): Question[] {
-    const shuffledQuestions = this.shuffleArray([...questions]);
+    const uniqueQuestions = this.deduplicateUniqueQuestions(questions);
+    const shuffledQuestions = this.shuffleArray([...uniqueQuestions]);
 
     return shuffledQuestions.map(q => {
       const originalOptions = [...q.options];
@@ -47,6 +48,19 @@ export class QuestionService {
         correctAnswer: newCorrectIndex
       };
     });
+  }
+
+  private deduplicateUniqueQuestions(questions: Question[]): Question[] {
+    const seen = new Set<string>();
+    const result: Question[] = [];
+    for (const q of questions) {
+      const key = `${(q.question || '').trim().toLowerCase()}||${(q.code || '').trim().toLowerCase()}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        result.push(q);
+      }
+    }
+    return result;
   }
 
   private shuffleArray<T>(array: T[]): T[] {

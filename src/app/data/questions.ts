@@ -1,13 +1,14 @@
 import { Question } from '../models/question.model';
 
 export const QUESTIONS_DATA: Question[] = [
+  // --- LEVEL 1: TEORÍA BÁSICA Y DDL FUNDAMENTAL ---
   {
     "id": 1,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 1,
-    "question": "¿Cuál es la sintaxis correcta para definir una columna 'salario' decimal de hasta 8 dígitos en total y 2 decimales en una sintaxis estándar SQL?",
+    "question": "¿Cuál es la sintaxis correcta para definir una columna 'salario' decimal de hasta 8 dígitos en total y 2 decimales en SQL?",
     "code": "CREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    salario -- ¿Qué definición va aquí?\n);",
     "options": [
       "salario DECIMAL(8,2)",
@@ -16,13 +17,13 @@ export const QUESTIONS_DATA: Question[] = [
       "salario DOUBLE(8.2)"
     ],
     "correctAnswer": 0,
-    "explanation": "DECIMAL(M, D) requiere M como la precisión total (máximo de dígitos totales) y D como la escala (dígitos a la derecha del punto decimal). Por lo tanto DECIMAL(8,2) permite hasta 8 dígitos en total con 2 posiciones decimales."
+    "explanation": "DECIMAL(M, D) requiere M como la precisión total (máximo de dígitos totales) y D como la escala (dígitos a la derecha del punto decimal). Por lo tanto DECIMAL(8,2) permite hasta 8 dígitos con 2 decimales."
   },
   {
     "id": 2,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 1,
     "question": "Se intenta ejecutar la siguiente sentencia DDL en una base de datos relacional. ¿Por qué producirá un error de sintaxis?",
     "code": "CREATE TABLE productos (\n    id INT,\n    nombre VARCHAR(100),\n    precio DECIMAL(10,2)\n    PRIMARY KEY (id)\n);",
@@ -39,7 +40,7 @@ export const QUESTIONS_DATA: Question[] = [
     "id": 3,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 1,
     "question": "Al definir la columna 'fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP', ¿qué comportamiento DDL se establece?",
     "code": "CREATE TABLE auditoria (\n    id INT PRIMARY KEY,\n    evento VARCHAR(50) NOT NULL,\n    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
@@ -56,7 +57,7 @@ export const QUESTIONS_DATA: Question[] = [
     "id": 4,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
-    "difficulty": "hard",
+    "difficulty": "medium",
     "level": 1,
     "question": "¿Qué ocurre si se intenta crear una tabla con dos columnas declaradas como PRIMARY KEY a nivel de columna?",
     "code": "CREATE TABLE matriculas (\n    estudiante_id INT PRIMARY KEY,\n    curso_id INT PRIMARY KEY,\n    fecha DATE\n);",
@@ -71,37 +72,37 @@ export const QUESTIONS_DATA: Question[] = [
   },
   {
     "id": 5,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "category": "BASIC_THEORY",
+    "categoryLabel": "TEORÍA BÁSICA",
+    "difficulty": "easy",
     "level": 1,
-    "question": "¿Cuál es la diferencia conceptual fundamental entre la restricción UNIQUE y PRIMARY KEY a nivel DDL?",
-    "code": "-- Caso A\ncorreo VARCHAR(100) UNIQUE\n\n-- Caso B\ncorreo VARCHAR(100) PRIMARY KEY",
+    "question": "¿Cuál de los siguientes comandos pertenece a la categoría DDL (Data Definition Language)?",
+    "code": "-- Selecciona el comando que modifica la estructura del esquema",
     "options": [
-      "PRIMARY KEY no permite ningún valor NULL, mientras que UNIQUE generalmente permite valores NULL (salvo que se combine con NOT NULL).",
-      "UNIQUE solo puede ser aplicada a datos de tipo numérico INT.",
-      "PRIMARY KEY crea un índice, mientras que UNIQUE no crea ningún índice interno.",
-      "Una tabla puede tener múltiples PRIMARY KEY pero solo una restricción UNIQUE."
+      "ALTER TABLE",
+      "INSERT INTO",
+      "UPDATE",
+      "SELECT"
     ],
     "correctAnswer": 0,
-    "explanation": "PRIMARY KEY exige unicidad y prohíbe explícitamente valores NULL (NOT NULL implícito o explícito). UNIQUE garantiza que los valores no se repitan, pero en el estándar SQL permite que existan valores NULL."
+    "explanation": "ALTER TABLE es un comando DDL porque modifica la estructura o definición de un objeto de la base de datos. INSERT, UPDATE y SELECT son DML/DQL."
   },
   {
     "id": 6,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "category": "BASIC_THEORY",
+    "categoryLabel": "TEORÍA BÁSICA",
+    "difficulty": "easy",
     "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_6 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "question": "¿Cuál es la diferencia fundamental entre el comando DROP TABLE y el comando TRUNCATE TABLE?",
+    "code": "-- Comparación DDL\nDROP TABLE clientes;\nTRUNCATE TABLE clientes;",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "DROP destruye la estructura de la tabla por completo; TRUNCATE borra todos los datos pero conserva la estructura.",
+      "TRUNCATE elimina la tabla de la base de datos; DROP solo borra las filas.",
+      "DROP es un comando DML mientras que TRUNCATE es un comando DQL.",
+      "No existe ninguna diferencia; ambos comandos realizan exactamente lo mismo."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "DROP TABLE elimina tanto el objeto tabla como toda su estructura del diccionario de datos. TRUNCATE TABLE vacía rápidamente los registros pero mantiene intacta la definición DDL de la tabla."
   },
   {
     "id": 7,
@@ -109,3296 +110,728 @@ export const QUESTIONS_DATA: Question[] = [
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
     "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_7 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "question": "¿Cuál es la principal ventaja de utilizar el tipo de dato VARCHAR(50) en lugar de CHAR(50)?",
+    "code": "nombre_var VARCHAR(50),\nnombre_fijo CHAR(50)",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "VARCHAR asigna espacio dinámico según la longitud del texto real; CHAR siempre reserva 50 caracteres con espacios de relleno.",
+      "CHAR permite almacenar caracteres numéricos mientras que VARCHAR solo acepta letras.",
+      "VARCHAR sólo se puede usar en claves primarias.",
+      "CHAR es de longitud variable y VARCHAR de longitud fija."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "CHAR es un tipo de dato de longitud fija que rellena con espacios hasta alcanzar N caracteres. VARCHAR ajusta su tamaño al texto insertado más una pequeña cabecera de longitud."
   },
   {
     "id": 8,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_8 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "question": "¿Qué sucede al ejecutar un CREATE TABLE con la cláusula IF NOT EXISTS cuando la tabla ya existe?",
+    "code": "CREATE TABLE IF NOT EXISTS usuarios (\n    id INT PRIMARY KEY,\n    email VARCHAR(100)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "El motor ignora la sentencia sin lanzar un error y conserva la tabla existente.",
+      "La sentencia sobrescribe y reemplaza la tabla existente perdiendo los datos.",
+      "Se produce un error fatal de sintaxis interrumpiendo el script.",
+      "Se crea una tabla duplicada con el prefijo _copy."
     ],
-    "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    correctAnswer: 0,
+    explanation: "IF NOT EXISTS evita que el script falle con un error de creación si el objeto tabla ya está presente en el esquema activo."
   },
+
+  // --- LEVEL 2: DDL FUNDAMENTAL Y TIPOS DE DATOS ---
   {
     "id": 9,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_9 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
+    "difficulty": "easy",
+    "level": 2,
+    "question": "¿Cuál es la diferencia conceptual fundamental entre la restricción UNIQUE y PRIMARY KEY a nivel DDL?",
+    "code": "-- Caso A: correo VARCHAR(100) UNIQUE\n-- Caso B: correo VARCHAR(100) PRIMARY KEY",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "PRIMARY KEY no permite ningún valor NULL, mientras que UNIQUE generalmente permite valores NULL.",
+      "UNIQUE solo puede ser aplicada a datos de tipo numérico INT.",
+      "PRIMARY KEY crea un índice, mientras que UNIQUE no crea ningún índice interno.",
+      "Una tabla puede tener múltiples PRIMARY KEY pero solo una restricción UNIQUE."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "PRIMARY KEY exige unicidad y prohíbe explícitamente valores NULL. UNIQUE garantiza unicidad entre valores presentes pero permite valores NULL según el estándar SQL."
   },
   {
     "id": 10,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_10 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 2,
+    "question": "¿Qué operación viola la restricción CHECK definida en la siguiente columna 'descuento'?",
+    "code": "CREATE TABLE ofertas (\n    id INT PRIMARY KEY,\n    descuento DECIMAL(5,2) CHECK (descuento >= 0.00 AND descuento <= 50.00)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Insertar un valor de 55.00 en la columna descuento.",
+      "Insertar un valor de 0.00 en la columna descuento.",
+      "Insertar un valor de 25.50 en la columna descuento.",
+      "Insertar NULL en la columna descuento (si no tiene NOT NULL)."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "La condición CHECK exige que descuento esté dentro del rango de 0.00 a 50.00. Insertar 55.00 evalúa la condición como FALSE y aborta la transacción."
   },
   {
     "id": 11,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_11 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 2,
+    "question": "Analiza la siguiente restricción CHECK sobre un rango numérico y determina qué valor será rechazado por la base de datos:",
+    "code": "CREATE TABLE inventario (\n    sku VARCHAR(20) PRIMARY KEY,\n    stock INT CHECK (stock > 0)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Un valor de 0 en la columna stock.",
+      "Un valor de 1 en la columna stock.",
+      "Un valor de 100 en la columna stock.",
+      "Cualquier valor entero positivo."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "La expresión 'stock > 0' es una desigualdad estricta. El valor 0 produce FALSE (0 no es estrictamente mayor que 0), provocando la violación de la restricción CHECK."
   },
   {
     "id": 12,
     "category": "CREATE_TABLE",
     "categoryLabel": "CREATE TABLE",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_12 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 2,
+    "question": "¿Qué tipo de dato DDL es el más adecuado para almacenar texto largo como descripciones de artículos sin límite estricto prefijado?",
+    "code": "CREATE TABLE articulos (\n    id INT PRIMARY KEY,\n    titulo VARCHAR(200),\n    contenido TEXT -- ¿Es este el tipo adecuado?\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "TEXT",
+      "CHAR(255)",
+      "INT",
+      "BOOLEAN"
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "El tipo TEXT permite almacenar cadenas de caracteres extensas de longitud variable (hasta 64KB o más según el motor), ideal para cuerpos de artículos o comentarios."
   },
   {
     "id": 13,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_13 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 2,
+    "question": "¿Qué sucede al intentar insertar un valor duplicado en una columna declarada como UNIQUE?",
+    "code": "CREATE TABLE usuarios (\n    id INT PRIMARY KEY,\n    email VARCHAR(100) UNIQUE\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "El motor de base de datos rechaza la inserción con un error de violación de restricción de unicidad.",
+      "La nueva fila reemplaza automáticamente a la fila antigua.",
+      "El valor se guarda con un número secuencial añadido al final.",
+      "La restricción UNIQUE se deshabilita para permitir el duplicado."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    explanation: "La restricción UNIQUE requiere que todos los valores no nulos presentes en la columna sean distintos entre sí. Insertar un valor idéntico arroja una excepción de unicidad."
   },
   {
     "id": 14,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_14 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
+    "difficulty": "easy",
+    "level": 2,
+    "question": "¿Cuál es el valor por defecto de una columna si no se especifica la cláusula DEFAULT ni NOT NULL?",
+    "code": "CREATE TABLE notas (\n    id INT PRIMARY KEY,\n    observacion VARCHAR(255)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "NULL",
+      "0",
+      "Cadena vacía ''",
+      "FALSE"
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Por defecto en SQL, las columnas que aceptan valores nulos y no tienen definida una cláusula DEFAULT asumen 'DEFAULT NULL'."
   },
+
+  // --- LEVEL 3: CONSTRAINTS DE COLUMNA Y PRIMARY KEY ---
   {
     "id": 15,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "PRIMARY_KEY",
+    "categoryLabel": "PRIMARY KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_15 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 3,
+    "question": "Dadas las siguientes definiciones, ¿cuáles son los dos requisitos indispensables de una PRIMARY KEY?",
+    "code": "CREATE TABLE facturas (\n    numero_factura INT PRIMARY KEY\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Debe contener valores 100% únicos y no permitir valores NULL.",
+      "Debe ser de tipo entero y de incremento automático obligatorio.",
+      "Debe coincidir con el nombre de la tabla.",
+      "Debe estar vinculada obligatoriamente a una Foreign Key."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Una Clave Primaria combina intrínsecamente la unicidad de valores (UNIQUE) con la prohibición absoluta de nulos (NOT NULL) para identificar unívocamente cada fila."
   },
   {
     "id": 16,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_16 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "category": "PRIMARY_KEY",
+    "categoryLabel": "PRIMARY KEY",
+    "difficulty": "hard",
+    "level": 3,
+    "question": "¿Cómo se define correctamente una Clave Primaria Compuesta por dos columnas?",
+    "code": "-- Sintaxis a nivel de tabla\nCREATE TABLE detalle_pedido (\n    pedido_id INT,\n    producto_id INT,\n    cantidad INT,\n    -- ¿Cómo se declara la PK compuesta?\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "PRIMARY KEY (pedido_id, producto_id)",
+      "pedido_id INT PRIMARY KEY, producto_id INT PRIMARY KEY",
+      "PRIMARY KEY pedido_id AND producto_id",
+      "CONSTRAINT pk PRIMARY KEY (pedido_id) AND PRIMARY KEY (producto_id)"
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Las claves primarias compuestas sólo pueden declararse a nivel de tabla especificando las columnas entre paréntesis delimitadas por comas: PRIMARY KEY (col1, col2)."
   },
   {
     "id": 17,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_17 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 3,
+    "question": "¿Qué ocurre al evaluar una restricción CHECK cuando el valor provisto en la inserción es NULL?",
+    "code": "CREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    edad INT CHECK (edad >= 18)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "La condición CHECK evalúa a UNKNOWN y permite la inserción (salvo que la columna sea también NOT NULL).",
+      "Rechaza inmediatamente la inserción con un error de verificación.",
+      "Convierte el valor NULL a 18 automáticamente.",
+      "Asigna 0 y luego falla la restricción."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "En la lógica tripartita de SQL (TRUE, FALSE, UNKNOWN), las restricciones CHECK solo rechazan la inserción si el resultado de la expresión es FALSE. Si es NULL, la comparación evalúa a UNKNOWN y se permite."
   },
   {
     "id": 18,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "PRIMARY_KEY",
+    "categoryLabel": "PRIMARY KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_18 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 3,
+    "question": "¿Cuántas restricciones PRIMARY KEY se pueden definir en una sola tabla?",
+    "code": "CREATE TABLE configuracion (...);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Exactamente 1 como máximo por tabla.",
+      "Tantas como columnas de tipo INT existan.",
+      "Hasta 3 si son claves compuestas.",
+      "Ilimitadas siempre que tengan nombres diferentes."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Cada tabla en un modelo relacional puede tener como máximo UNA sola restricción de Clave Primaria, aunque esta puede estar formada por una o múltiples columnas (compuesta)."
   },
   {
     "id": 19,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_19 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "category": "CHECK_UNIQUE_DEFAULT",
+    "categoryLabel": "RESTRICCIONES",
+    "difficulty": "hard",
+    "level": 3,
+    "question": "Evalúa la validez DDL de la siguiente declaración de columna con múltiple restricción:",
+    "code": "codigo VARCHAR(20) NOT NULL UNIQUE DEFAULT 'PENDIENTE'",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Es completamente válida: combina restricción de no nulidad, unicidad y un valor por defecto.",
+      "Es inválida porque UNIQUE y NOT NULL no pueden combinarse en la misma columna.",
+      "Es inválida porque DEFAULT solo se puede usar con valores numéricos.",
+      "Es inválida porque falta especificar el nombre de la restricción con CONSTRAINT."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Es una declaración DDL estándar perfectamente válida. Una columna puede tener múltiples restricciones en su línea de definición separadas por espacios."
   },
+
+  // --- LEVEL 4: FOREIGN KEY Y RELACIONES ---
   {
     "id": 20,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_20 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 4,
+    "question": "Dadas las siguientes definiciones DDL, ¿cuál es la tabla PADRE y cuál es la tabla HIJA?",
+    "code": "CREATE TABLE departamentos (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50)\n);\n\nCREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50),\n    dep_id INT REFERENCES departamentos(id)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "'departamentos' es la tabla PADRE y 'empleados' es la tabla HIJA.",
+      "'empleados' es la tabla PADRE y 'departamentos' es la tabla HIJA.",
+      "Ambas son tablas padre independientes.",
+      "No existe relación jerárquica entre estas dos tablas."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "La tabla 'departamentos' contiene la Clave Primaria referenciada (PADRE). La tabla 'empleados' contiene la Clave Foránea (HIJA) que apunta a la clave primaria de la tabla padre."
   },
   {
     "id": 21,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_21 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 4,
+    "question": "¿Qué ocurre si se intenta ejecutar un CREATE TABLE con una Foreign Key que hace referencia a una tabla que aún NO ha sido creada?",
+    "code": "CREATE TABLE pedidos (\n    id INT PRIMARY KEY,\n    cliente_id INT REFERENCES clientes(id) -- 'clientes' aún no existe\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Falla con un error de referencia indicando que la tabla o clave referenciada no existe.",
+      "Crea automáticamente la tabla 'clientes' en segundo plano.",
+      "Crea la tabla 'pedidos' suspendiendo la Foreign Key temporalmente.",
+      "Convierte la Foreign Key en una columna normal sin restricción."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    explanation: "El motor de base de datos valida la existencia del objeto relacional referenciado al momento de ejecutar la sentencia DDL. Si 'clientes' no existe, la sentencia falla."
   },
   {
     "id": 22,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
-    "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_22 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY",
+    "difficulty": "hard",
+    "level": 4,
+    "question": "¿Identifica cuál de las siguientes cláusulas define correctamente una Foreign Key a nivel de tabla?",
+    "code": "CREATE TABLE pagos (\n    id INT PRIMARY KEY,\n    factura_id INT,\n    monto DECIMAL(10,2),\n    -- ¿Cómo se define la FK a nivel de tabla?\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "FOREIGN KEY (factura_id) REFERENCES facturas(id)",
+      "FOREIGN KEY factura_id TO facturas.id",
+      "ADD FK (factura_id) LINK TO facturas(id)",
+      "CONSTRAINT FK_PAGO REFERENCES facturas(factura_id)"
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "La sintaxis estándar DDL a nivel de tabla para una clave foránea es: FOREIGN KEY (columna_local) REFERENCES tabla_padre(columna_padre)."
   },
   {
     "id": 23,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_23 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 4,
+    "question": "¿Qué requisito técnico debe cumplir la columna referenciada en la tabla PADRE por una Foreign Key?",
+    "code": "REFERENCES tabla_padre(columna_referenciada)",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Debe ser una PRIMARY KEY o tener una restricción UNIQUE definida sobre ella.",
+      "Debe tener exactamente el mismo nombre que la columna foránea.",
+      "Debe ser obligatoriamente de tipo VARCHAR.",
+      "Debe ser una columna que permita valores duplicados."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Para garantizar la integridad referencial, la columna de la tabla padre referenciada por una FK debe ser unívoca, es decir, poseer una restricción PRIMARY KEY o UNIQUE."
   },
   {
     "id": 24,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "FOREIGN_KEY",
+    "categoryLabel": "FOREIGN KEY",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_24 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 4,
+    "question": "¿Se puede insertar un valor NULL en una columna declarada como FOREIGN KEY?",
+    "code": "CREATE TABLE proyectos (\n    id INT PRIMARY KEY,\n    lider_id INT REFERENCES empleados(id)\n);",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Sí, a menos que la columna también esté explícitamente declarada como NOT NULL.",
+      "No, las claves foráneas prohíben absolutamente los valores NULL.",
+      "Solo si la tabla padre tiene un registro con id = 0.",
+      "Solo si se usa la cláusula ON DELETE CASCADE."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "Una clave foránea permite valores NULL (indicando ausencia de relación) a menos que la definición de la columna incluya explícitamente la restricción NOT NULL."
   },
+
+  // --- LEVEL 5: ACCIONES REFERENCIALES ---
   {
     "id": 25,
-    "category": "CREATE_TABLE",
-    "categoryLabel": "CREATE TABLE",
+    "category": "REFERENTIAL_ACTIONS",
+    "categoryLabel": "ACCIONES REFERENCIALES",
     "difficulty": "medium",
-    "level": 1,
-    "question": "Analiza la definición de tipos de datos y restricciones de columna en la siguiente tabla:",
-    "code": "CREATE TABLE demo_tab_25 (\n    id INT PRIMARY KEY,\n    codigo VARCHAR(20) NOT NULL UNIQUE,\n    activo BOOLEAN DEFAULT TRUE\n);",
+    "level": 5,
+    "question": "¿Qué ocurre con los registros de la tabla HIJA cuando se borra una fila en la tabla PADRE bajo la regla ON DELETE CASCADE?",
+    "code": "FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE",
     "options": [
-      "La columna 'codigo' no permite duplicados ni valores nulos.",
-      "La columna 'codigo' permite múltiples valores NULL.",
-      "La tabla contiene dos claves primarias distintas.",
-      "El valor DEFAULT solo aplica cuando 'activo' es NULL."
+      "Se eliminan automáticamente todos los registros asociados en la tabla hija.",
+      "Se colocan en NULL todas las claves foráneas de los registros asociados.",
+      "El borrado en la tabla padre es bloqueado con un error de restricción.",
+      "Los registros hijos se mueven a una tabla de archivo histórico."
     ],
     "correctAnswer": 0,
-    "explanation": "Al combinar NOT NULL y UNIQUE en la columna 'codigo', se garantiza que no existan registros vacíos ni duplicados en esa columna."
+    "explanation": "ON DELETE CASCADE propaga automáticamente la eliminación: al borrar un registro padre, la base de datos elimina automáticamente todas las filas hijas asociadas."
   },
   {
     "id": 26,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "¿Qué operación viola la restricción CHECK definida en la siguiente tabla de productos?",
-    "code": "CREATE TABLE productos (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(100) NOT NULL,\n    precio DECIMAL(10,2),\n    CONSTRAINT chk_precio_pos CHECK (precio > 0)\n);",
+    "category": "REFERENTIAL_ACTIONS",
+    "categoryLabel": "ACCIONES REFERENCIALES",
+    "difficulty": "medium",
+    "level": 5,
+    "question": "¿Qué requisito debe cumplir la columna foránea para poder usar la regla ON DELETE SET NULL?",
+    "code": "FOREIGN KEY (dep_id) REFERENCES departamentos(id) ON DELETE SET NULL",
     "options": [
-      "Intentar registrar un producto con precio = 0 o precio = -15.50",
-      "Intentar registrar un producto con precio = 100.00",
-      "Intentar dejar el nombre como 'Laptop'",
-      "Intentar usar un ID de valor 9999"
+      "La columna foránea dep_id NO debe ser NOT NULL (debe permitir valores nulos).",
+      "La columna dep_id debe ser la clave primaria de la tabla hija.",
+      "La columna dep_id debe tener una restricción CHECK positiva.",
+      "La columna dep_id debe ser de tipo VARCHAR únicamente."
     ],
     "correctAnswer": 0,
-    "explanation": "La restricción CHECK (precio > 0) requiere estrictamente que el precio sea mayor a cero. Cero y valores negativos violarán la restricción y serán rechazados por el motor."
+    "explanation": "Si la columna foránea estuviera configurada como NOT NULL, intentar ejecutar SET NULL ante un borrado del padre provocaría un error de violación de nulidad."
   },
   {
     "id": 27,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la siguiente restricción CHECK sobre un rango de fechas. ¿Qué condición debe cumplirse en la inserción?",
-    "code": "CREATE TABLE reservas (\n    id INT PRIMARY KEY,\n    fecha_inicio DATE NOT NULL,\n    fecha_fin DATE NOT NULL,\n    CHECK (fecha_fin >= fecha_inicio)\n);",
+    "category": "REFERENTIAL_ACTIONS",
+    "categoryLabel": "ACCIONES REFERENCIALES",
+    "difficulty": "easy",
+    "level": 5,
+    "question": "¿Cuál es el comportamiento de la acción por defecto (RESTRICT / NO ACTION) ante un intento de eliminar un registro padre con hijos existentes?",
+    "code": "FOREIGN KEY (categoria_id) REFERENCES categorias(id) -- Sin especificar ON DELETE",
     "options": [
-      "'fecha_fin' debe ser posterior o igual a 'fecha_inicio'.",
-      "'fecha_inicio' debe ser siempre la fecha actual del sistema.",
-      "'fecha_fin' debe ser exactamente un año mayor a 'fecha_inicio'.",
-      "Ambas fechas deben pertenecer obligatoriamente al mismo mes."
+      "Impide el borrado del registro en la tabla padre lanzando una excepción de integridad referencial.",
+      "Borra en cascada los registros asociados en la tabla hija.",
+      "Establece las referencias en la tabla hija a NULL.",
+      "Elimina la restricción Foreign Key de la base de datos."
     ],
     "correctAnswer": 0,
-    "explanation": "'fecha_fin' debe ser posterior o igual a 'fecha_inicio'."
+    "explanation": "Por defecto (RESTRICT / NO ACTION), el motor prohíbe la eliminación o modificación de un registro padre si existen registros en tablas hijas vinculados a él."
   },
   {
     "id": 28,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "REFERENTIAL_ACTIONS",
+    "categoryLabel": "ACCIONES REFERENCIALES",
     "difficulty": "hard",
-    "level": 2,
-    "question": "¿Qué sucede si una columna tiene la restricción CHECK (edad >= 18) y se intenta registrar un valor NULL en la columna 'edad' (siendo la columna opcional sin NOT NULL)?",
-    "code": "CREATE TABLE clientes (\n    id INT PRIMARY KEY,\n    edad INT CHECK (edad >= 18)\n);",
+    "level": 5,
+    "question": "Evalúa el efecto de la cláusula ON UPDATE CASCADE en la siguiente definición:",
+    "code": "FOREIGN KEY (codigo_dep) REFERENCES departamentos(codigo) ON UPDATE CASCADE",
     "options": [
-      "En el estándar SQL, la restricción CHECK evalúa NULL como UNKNOWN, permitiendo la inserción (salvo que se agregue NOT NULL).",
-      "Rechaza inmediatamente la inserción por considerar NULL menor a 18.",
-      "Convierte el NULL automáticamente a 18.",
-      "Lanza un error de sintaxis DDL."
+      "Si la clave primaria 'codigo' del departamento cambia, el nuevo valor se actualiza automáticamente en las filas hijas.",
+      "Si cambia cualquier columna de la tabla hija, se actualiza la clave del departamento padre.",
+      "Prohíbe modificar cualquier valor en la tabla padre.",
+      "Elimina los registros hijos cuando se actualiza el registro padre."
     ],
     "correctAnswer": 0,
-    "explanation": "En el estándar SQL, las restricciones CHECK solo rechazan un registro si la condición evalúa a FALSE. Como (NULL >= 18) evalúa a UNKNOWN (no a FALSE), la verificación pasa a menos que exista la restricción NOT NULL."
+    "explanation": "ON UPDATE CASCADE propaga los cambios de valor de la clave primaria referenciada del registro padre hacia las columnas foráneas de todas las filas hijas vinculadas."
   },
   {
     "id": 29,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "REFERENTIAL_ACTIONS",
+    "categoryLabel": "ACCIONES REFERENCIALES",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c4 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 5,
+    "question": "¿Cuál es la diferencia entre ON DELETE SET DEFAULT y ON DELETE SET NULL?",
+    "code": "-- Comparativa de reglas referenciales",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "SET DEFAULT asigna el valor predeterminado configurado en la columna; SET NULL asigna NULL.",
+      "SET DEFAULT elimina la fila hija; SET NULL la conserva sin cambios.",
+      "SET DEFAULT sólo se aplica en actualizaciones; SET NULL en eliminaciones.",
+      "No existe diferencia; ambas asignan NULL a la clave foránea."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "SET DEFAULT asigna a la columna foránea el valor especificado en su cláusula DEFAULT al borrar la fila padre. SET NULL reemplaza la clave foránea con el valor NULL."
   },
+
+  // --- LEVEL 6: CONSTRAINTS NOMBRADAS Y COMPUESTAS ---
   {
     "id": 30,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c5 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "CONSTRAINTS NOMBRADAS",
+    "difficulty": "medium",
+    "level": 6,
+    "question": "¿Por qué es highly recomendable asignar un nombre explícito a las restricciones utilizando la palabra clave CONSTRAINT?",
+    "code": "CONSTRAINT chk_precio_positivo CHECK (precio > 0)",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Facilita la identificación del error en logs y permite eliminar o modificar la restricción mediante ALTER TABLE de forma precisa.",
+      "Hace que las consultas SELECT se ejecuten 10 veces más rápido.",
+      "Es un requisito obligatorio sin el cual el comando CREATE TABLE falla.",
+      "Permite ignorar la restricción durante inserciones masivas."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Nombrar restricciones (ej. chk_precio_positivo) proporciona nombres claros en los mensajes de error y permite referenciarlas directamente en sentencias DDL como ALTER TABLE ... DROP CONSTRAINT."
   },
   {
     "id": 31,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c6 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 6,
+    "question": "Analiza la siguiente definición de tabla con clave primaria compuesta nombrada. ¿Qué filas serán rechazadas por duplicación?",
+    "code": "CREATE TABLE inscripciones (\n    alumno_id INT,\n    curso_id INT,\n    gestion INT,\n    CONSTRAINT pk_inscripciones PRIMARY KEY (alumno_id, curso_id)\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Cualquier fila que repita la misma combinación de (alumno_id, curso_id).",
+      "Cualquier fila que repita el mismo alumno_id con diferente curso_id.",
+      "Cualquier fila que repita el mismo curso_id con diferente alumno_id.",
+      "Las filas que tengan gestion idéntico independientemente de los otros campos."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "En una clave primaria compuesta (alumno_id, curso_id), la unicidad se exige para la combinación de ambas columnas. Se rechaza una fila si ya existe otra con la misma dupla de valores."
   },
   {
     "id": 32,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c7 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "CONSTRAINTS NOMBRADAS",
+    "difficulty": "medium",
+    "level": 6,
+    "question": "Examina la sintaxis DDL con restricciones nombradas. ¿Cuál es la restricción UNIQUE declarada a nivel de tabla?",
+    "code": "CREATE TABLE cuentas (\n    id INT PRIMARY KEY,\n    numero_cuenta VARCHAR(20),\n    banco_id INT,\n    CONSTRAINT uk_cuenta_banco UNIQUE (numero_cuenta, banco_id)\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "uk_cuenta_banco garantiza que no existan dos cuentas con el mismo número en el mismo banco.",
+      "uk_cuenta_banco prohíbe que el banco_id sea nulo.",
+      "uk_cuenta_banco es la clave primaria de la tabla cuentas.",
+      "uk_cuenta_banco elimina la tabla si se inserta un número duplicado."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "CONSTRAINT uk_cuenta_banco UNIQUE (numero_cuenta, banco_id) establece una restricción de unicidad compuesta entre el número de cuenta y el identificador del banco."
   },
   {
     "id": 33,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "NAMED_CONSTRAINTS",
+    "categoryLabel": "CONSTRAINTS NOMBRADAS",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c8 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 6,
+    "question": "¿Cómo se nombra correctamente una Foreign Key a nivel de tabla usando la palabra clave CONSTRAINT?",
+    "code": "CREATE TABLE envios (\n    id INT PRIMARY KEY,\n    pedido_id INT,\n    -- ¿Cómo se declara con nombre?\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "CONSTRAINT fk_envio_pedido FOREIGN KEY (pedido_id) REFERENCES pedidos(id)",
+      "FOREIGN KEY fk_envio_pedido (pedido_id) REFERENCES pedidos(id)",
+      "ADD CONSTRAINT (pedido_id) REFERENCES pedidos(id) AS fk_envio_pedido",
+      "CONSTRAINT FOREIGN KEY fk_envio_pedido (pedido_id) REFERENCES pedidos(id)"
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "La sintaxis formal para nombrar cualquier restricción en DDL es: CONSTRAINT nombre_restriccion TIPO_RESTRICCION (columnas) [opciones]."
   },
+
+  // --- LEVEL 7: ALTER TABLE ---
   {
     "id": 34,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c9 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "ALTER_TABLE",
+    "categoryLabel": "ALTER TABLE",
+    "difficulty": "medium",
+    "level": 7,
+    "question": "¿Cuál es la sintaxis SQL estándar para agregar una nueva columna 'telefono' a una tabla existente 'clientes'?",
+    "code": "-- Sentencia DDL para modificar estructura de tabla",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "ALTER TABLE clientes ADD COLUMN telefono VARCHAR(20);",
+      "UPDATE TABLE clientes ADD telefono VARCHAR(20);",
+      "INSERT COLUMN telefono VARCHAR(20) INTO clientes;",
+      "MODIFY TABLE clientes INSERT COLUMN telefono VARCHAR(20);"
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Para añadir una nueva columna a una tabla existente se utiliza la cláusula DDL ALTER TABLE nombre_tabla ADD [COLUMN] nombre_columna TIPO_DATO."
   },
   {
     "id": 35,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c10 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "ALTER_TABLE",
+    "categoryLabel": "ALTER TABLE",
+    "difficulty": "medium",
+    "level": 7,
+    "question": "¿Cómo se elimina una restricción nombrada 'fk_usuarios_rol' de una tabla 'usuarios'?",
+    "code": "-- Sentencia DDL para borrar restricción existente",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "ALTER TABLE usuarios DROP CONSTRAINT fk_usuarios_rol;",
+      "DELETE CONSTRAINT fk_usuarios_rol FROM usuarios;",
+      "REMOVE FOREIGN KEY fk_usuarios_rol FROM usuarios;",
+      "ALTER TABLE usuarios DELETE CONSTRAINT fk_usuarios_rol;"
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "En la mayoría de los RDBMS estándar SQL, una restricción nombrada existente se elimina mediante: ALTER TABLE nombre_tabla DROP CONSTRAINT nombre_restriccion."
   },
   {
     "id": 36,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "ALTER_TABLE",
+    "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c11 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 7,
+    "question": "¿Cuál de las siguientes sentencias permite agregar una Foreign Key a una tabla ya existente?",
+    "code": "-- Agregar restricción referencial a 'pedidos'",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "ALTER TABLE pedidos ADD CONSTRAINT fk_pedidos_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(id);",
+      "UPDATE TABLE pedidos ADD FOREIGN KEY (cliente_id) REFERENCES clientes(id);",
+      "ALTER TABLE pedidos INSERT FOREIGN KEY (cliente_id) REFERENCES clientes(id);",
+      "CREATE FOREIGN KEY fk_pedidos_cliente ON pedidos(cliente_id) REFERENCES clientes(id);"
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Para añadir una clave foránea a una tabla existente se utiliza: ALTER TABLE tabla ADD CONSTRAINT nombre_fk FOREIGN KEY (columna) REFERENCES tabla_padre(col_padre)."
   },
   {
     "id": 37,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "ALTER_TABLE",
+    "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c12 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 7,
+    "question": "Se ejecuta la sentencia 'ALTER TABLE productos DROP COLUMN stock;'. ¿Qué sucede con los datos existentes en dicha columna?",
+    "code": "ALTER TABLE productos DROP COLUMN stock;",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "La columna 'stock' y todos sus datos almacenados son eliminados permanentemente del esquema.",
+      "La columna se oculta pero los datos se pueden recuperar con UN-DROP.",
+      "Se borra la columna únicamente si no contenía ningún valor.",
+      "Los datos se transfieren automáticamente a una tabla temporal de respaldo."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "ALTER TABLE ... DROP COLUMN elimina irreversiblemente la columna especificada junto con todos los valores almacenados en ella para todas las filas."
   },
   {
     "id": 38,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "ALTER_TABLE",
+    "categoryLabel": "ALTER TABLE",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c13 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 7,
+    "question": "¿Qué precaución o requisito se debe cumplir al modificar el tipo de dato de una columna de VARCHAR(100) a VARCHAR(20) en una tabla con datos?",
+    "code": "ALTER TABLE clientes ALTER COLUMN codigo TYPE VARCHAR(20);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Ningún registro existente en la tabla puede superar los 20 caracteres de longitud, o de lo contrario el comando fallará.",
+      "La tabla debe estar completamente vacía sin ningún dato.",
+      "Es obligatorio eliminar la clave primaria antes de alterar el tipo de dato.",
+      "Los valores de más de 20 caracteres se truncan silenciosamente sin aviso."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Reducir la longitud de un tipo de columna de texto provocará un error de conversión si existen registros cuyo contenido sobrepase el nuevo límite de tamaño."
   },
+
+  // --- LEVEL 8: DROP Y DEPENDENCIAS ---
   {
     "id": 39,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "DROP_DEPENDENCIES",
+    "categoryLabel": "DROP & DEPENDENCIAS",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c14 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 8,
+    "question": "Se tienen tres tablas relacionadas: 'paises' (padre), 'provincias' (hija de paises) y 'ciudades' (hija de provincias). ¿En qué orden deben eliminarse (DROP TABLE) para no violar restricciones de FK?",
+    "code": "-- Dependencia: ciudades -> provincias -> paises",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "ciudades, luego provincias, y finalmente paises.",
+      "paises, luego provincias, y finalmente ciudades.",
+      "provincias, luego ciudades, y finalmente paises.",
+      "El orden de eliminación no tiene ninguna importancia en DDL."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Para evitar errores de integridad referencial, las tablas hijas (las que contienen las claves foráneas) deben eliminarse antes que las tablas padre a las cuales referencian."
   },
   {
     "id": 40,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
+    "category": "DROP_DEPENDENCIES",
+    "categoryLabel": "DROP & DEPENDENCIAS",
     "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c15 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "level": 8,
+    "question": "¿En qué orden correcto deben CREARSE las tablas 'paises', 'provincias' y 'ciudades' para que los CREATE TABLE no fallen por falta de referencias?",
+    "code": "-- Jerarquía de dependencias relacionales",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "paises primero, luego provincias, y finalmente ciudades.",
+      "ciudades primero, luego provincias, y finalmente paises.",
+      "provincias primero, luego paises, y finalmente ciudades.",
+      "No importa el orden de creación en ningún motor de base de datos."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Las tablas padre deben crearse antes que las tablas hijas para que al definir las Foreign Keys en las tablas hijas, las tablas referenciadas ya existan en el esquema."
   },
   {
     "id": 41,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c16 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DROP_DEPENDENCIES",
+    "categoryLabel": "DROP & DEPENDENCIAS",
+    "difficulty": "expert",
+    "level": 8,
+    "question": "Analiza la consecuencia de intentar ejecutar 'DROP TABLE clientes;' si la tabla 'pedidos' tiene una Foreign Key que la referenciaría:",
+    "code": "-- 'pedidos' hace referencia a 'clientes'\nDROP TABLE clientes;",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "La sentencia falla y rechaza la eliminación de la tabla 'clientes' debido a la dependencia referencial activa.",
+      "Elimina 'clientes' y también elimina automáticamente la tabla 'pedidos'.",
+      "Elimina 'clientes' dejando la Foreign Key de 'pedidos' apuntando a nada.",
+      "Convierte la tabla 'clientes' en una vista automáticamente."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Por defecto (RESTRICT), el motor de base de datos prohíbe eliminar un objeto tabla si existen otros objetos o restricciones activas que dependen directamente de él."
   },
   {
     "id": 42,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c17 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DROP_DEPENDENCIES",
+    "categoryLabel": "DROP & DEPENDENCIAS",
+    "difficulty": "expert",
+    "level": 8,
+    "question": "¿Qué efecto produce ejecutar 'DROP TABLE clientes CASCADE;' en motores de base de datos que soportan esa cláusula?",
+    "code": "DROP TABLE clientes CASCADE;",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Elimina la tabla 'clientes' y automáticamente remueve las restricciones de Foreign Key dependientes en las tablas hijas.",
+      "Elimina la tabla 'clientes' y todas las filas de todas las tablas de la base de datos.",
+      "Borra sólo las filas de la tabla 'clientes' sin tocar la estructura.",
+      "Es un comando inválido que siempre lanza error de sintaxis."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    explanation: "La cláusula CASCADE en DROP TABLE obliga a la eliminación de la tabla seleccionada y deshace/elimina automáticamente todas las restricciones de clave foránea que apuntaban hacia ella."
   },
+
+  // --- LEVEL 9: DDL DEBUGGER RETOS EXTREMOS ---
   {
     "id": 43,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c18 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "DDL DEBUGGER",
+    "difficulty": "expert",
+    "level": 9,
+    "question": "🐛 DDL DEBUGGER: Identifica el error sintáctico o conceptual en el siguiente script SQL:",
+    "code": "CREATE TABLE proyectos (\n    id INT PRIMARY KEY,\n    presupuesto DECIMAL(10,2),\n    CONSTRAINT chk_presupuesto CHECK presupuesto > 0 -- Falla aquí\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "La expresión de la restricción CHECK debe estar obligatoriamente encerrada entre paréntesis: CHECK (presupuesto > 0).",
+      "El nombre 'chk_presupuesto' no puede contener guiones bajos.",
+      "DECIMAL(10,2) no admite restricciones de tipo CHECK.",
+      "La palabra CONSTRAINT solo puede usarse con PRIMARY KEY."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    explanation: "La cláusula CHECK requiere que la condición o expresión lógica evaluada esté delimitada por paréntesis obligatorios: CHECK (expresión)."
   },
   {
     "id": 44,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c19 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "DDL DEBUGGER",
+    "difficulty": "expert",
+    "level": 9,
+    "question": "🐛 DDL DEBUGGER: Encuentra la falla en la siguiente instrucción DDL de creación de tabla:",
+    code: "CREATE TABLE usuarios (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    email VARCHAR(100),\n    PRIMARY KEY (email)\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Se intentó declarar dos PRIMARY KEY en la misma tabla ('id' a nivel de columna y 'email' a nivel de tabla).",
+      "AUTO_INCREMENT exige que la columna sea VARCHAR.",
+      "VARCHAR(100) no se puede usar si existe una columna INT.",
+      "Falta un punto y coma dentro del paréntesis final."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Una tabla sólo puede tener una Clave Primaria. Definir 'id INT PRIMARY KEY' y luego 'PRIMARY KEY (email)' causa un conflicto por doble declaración de clave primaria."
   },
   {
     "id": 45,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c20 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "DDL DEBUGGER",
+    "difficulty": "expert",
+    "level": 9,
+    "question": "🐛 DDL DEBUGGER: ¿Por qué fallará este script DDL al ejecutarse en un motor SQL estándar?",
+    "code": "CREATE TABLE ventas (\n    id INT PRIMARY KEY,\n    monto DECIMAL(10,2) DEFAULT 'CIEN'\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Incompatibilidad de tipos: Se intenta asignar una cadena de texto 'CIEN' como valor por defecto de una columna numérica DECIMAL.",
+      "DEFAULT solo se permite en columnas de tipo TIMESTAMP.",
+      "El valor por defecto de DECIMAL debe llevar paréntesis obligatorios.",
+      "La columna 'id' no puede ser PRIMARY KEY si 'monto' tiene un DEFAULT."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "El valor especificado en la cláusula DEFAULT debe ser compatible con el tipo de dato de la columna. Asignar 'CIEN' a un DECIMAL causa un error de conversión de tipos."
   },
   {
     "id": 46,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c21 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "DDL DEBUGGER",
+    "difficulty": "expert",
+    "level": 9,
+    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL y detecta el error en la restricción nombrada:",
+    "code": "CREATE TABLE vehiculos (\n    vin VARCHAR(17) PRIMARY KEY,\n    modelo VARCHAR(50),\n    CONSTRAINT vin UNIQUE (vin)\n);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "El nombre de la restricción 'vin' duplica el nombre de la columna 'vin', lo cual puede causar conflictos de identificadores en el esquema.",
+      "La restricción UNIQUE no acepta columnas de tipo VARCHAR.",
+      "No se puede usar la palabra CONSTRAINT en columnas que ya son PRIMARY KEY.",
+      "PRIMARY KEY deshabilita las restricciones de tipo UNIQUE."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Asignar a una restricción el mismo nombre exacto que una columna de la tabla produce ambigüedades y errores en muchos motores de bases de datos que requieren identificadores únicos dentro del espacio de nombres de la tabla."
   },
   {
     "id": 47,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c22 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
+    "category": "DDL_DEBUGGER",
+    "categoryLabel": "DDL DEBUGGER",
+    "difficulty": "expert",
+    "level": 9,
+    "question": "🐛 DDL DEBUGGER: Analiza este intento de modificación DDL mediante ALTER TABLE:",
+    "code": "ALTER TABLE empleados ADD CONSTRAINT CHECK (salario > 0);",
     "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
+      "Al usar la sintaxis ADD CONSTRAINT se debe proveer explícitamente el nombre de la restricción antes de la palabra CHECK.",
+      "ALTER TABLE no permite agregar restricciones CHECK después de crear la tabla.",
+      "La palabra ADD debe ser reemplazada por INSERT.",
+      "Falta indicar la columna en la que se aplicará la restricción entre comillas."
     ],
     "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
+    "explanation": "Si se incluye el término 'CONSTRAINT', la sintaxis exige la presencia de un identificador de nombre (ej: ADD CONSTRAINT chk_salario CHECK (salario > 0)). Para omitir el nombre debe usarse directamente 'ADD CHECK (salario > 0)'."
   },
   {
     "id": 48,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c23 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
-    "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
-  },
-  {
-    "id": 49,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c24 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
-    "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
-  },
-  {
-    "id": 50,
-    "category": "CHECK_UNIQUE_DEFAULT",
-    "categoryLabel": "CONSTRAINTS",
-    "difficulty": "hard",
-    "level": 2,
-    "question": "Analiza la combinación de restricciones en la siguiente columna:",
-    "code": "CREATE TABLE usuarios_c25 (\n    id INT PRIMARY KEY,\n    email VARCHAR(150) NOT NULL UNIQUE,\n    edad INT CHECK (edad >= 18 AND edad <= 120)\n);",
-    "options": [
-      "'email' es único y obligatorio; 'edad' debe estar entre 18 y 120 inclusivo.",
-      "'email' permite duplicados si 'edad' es mayor a 18.",
-      "'edad' es clave primaria secundaria.",
-      "No se puede usar AND dentro de una restricción CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "CHECK admite expresiones compuestas con operadores lógicos AND / OR. 'email' exige unicidad y no admite nulos."
-  },
-  {
-    "id": 51,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Dadas las siguientes definiciones, ¿cuál es la tabla PADRE y cuál es la tabla HIJA en la relación de clave foránea?",
-    "code": "CREATE TABLE departamentos (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(50)\n);\n\nCREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(100),\n    departamento_id INT,\n    CONSTRAINT fk_emp_depto FOREIGN KEY (departamento_id)\n        REFERENCES departamentos(id)\n);",
-    "options": [
-      "'departamentos' es la tabla PADRE (referenciada) y 'empleados' es la tabla HIJA (referenciante).",
-      "'empleados' es la tabla PADRE y 'departamentos' es la tabla HIJA.",
-      "Ambas tablas son tablas PADRE independientes.",
-      "No existe relación de clave foránea entre ambas tablas."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La tabla que posee la restricción FOREIGN KEY ('empleados') es la tabla HIJA, y la tabla que posee la clave primaria referenciada ('departamentos') es la tabla PADRE."
-  },
-  {
-    "id": 52,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "¿Qué ocurre si intentas ejecutar el CREATE TABLE de la tabla 'empleados' ANTES de ejecutar el CREATE TABLE de la tabla 'departamentos'?",
-    "code": "CREATE TABLE empleados (\n    id INT PRIMARY KEY,\n    depto_id INT REFERENCES departamentos(id)\n);",
-    "options": [
-      "Falla con un error de integridad DDL porque la tabla referenciada 'departamentos' aún no existe.",
-      "Crea la tabla 'departamentos' automáticamente de forma transparente.",
-      "Crea la clave foránea pero la deja en estado desactivado.",
-      "Invierte la relación convirtiendo 'empleados' en tabla padre."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Para crear una restricción FOREIGN KEY hacia una tabla referenciada, dicha tabla PADRE (y su clave primaria) DEBEN existir previamente en la base de datos."
-  },
-  {
-    "id": 53,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r3 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 54,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r4 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 55,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r5 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 56,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r6 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 57,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r7 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 58,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r8 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 59,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r9 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 60,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r10 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 61,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r11 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 62,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r12 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 63,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r13 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 64,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r14 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 65,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r15 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 66,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r16 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 67,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r17 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 68,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r18 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 69,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r19 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 70,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r20 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 71,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r21 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 72,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r22 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 73,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r23 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 74,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r24 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 75,
-    "category": "FOREIGN_KEY",
-    "categoryLabel": "RELACIONES Y FK",
-    "difficulty": "hard",
-    "level": 3,
-    "question": "Identifica la clave referencial en la siguiente relación de tablas:",
-    "code": "CREATE TABLE pedidos_r25 (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_ped_cli FOREIGN KEY (cliente_id) REFERENCES clientes(id)\n);",
-    "options": [
-      "'cliente_id' es la clave foránea (FK) que referencia a 'clientes(id)'.",
-      "'id' de 'pedidos' es la clave foránea.",
-      "'clientes' es la tabla hija.",
-      "La restricción FK no requiere que 'clientes(id)' sea PRIMARY KEY o UNIQUE."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La columna 'cliente_id' actúa como FOREIGN KEY apuntando al identificador único de la tabla 'clientes'."
-  },
-  {
-    "id": 76,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "¿Qué ocurre con los registros de la tabla HIJA ('pedidos') si se elimina una fila de la tabla PADRE ('clientes') bajo la configuración ON DELETE CASCADE?",
-    "code": "CREATE TABLE pedidos (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_cli FOREIGN KEY (cliente_id)\n        REFERENCES clientes(id) ON DELETE CASCADE\n);",
-    "options": [
-      "Se eliminan automáticamente todas las filas de 'pedidos' asociadas a ese cliente.",
-      "La eliminación en 'clientes' se bloquea y lanza un error.",
-      "Las filas en 'pedidos' cambian su 'cliente_id' a NULL.",
-      "Se eliminan todas las filas de la tabla 'clientes' completa."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON DELETE CASCADE propaga la eliminación de la fila padre a todas las filas hijas que dependan de ella en la tabla referenciante."
-  },
-  {
-    "id": 77,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "¿Qué requisito debe cumplir la columna 'departamento_id' en la tabla HIJA para poder configurar ON DELETE SET NULL?",
-    "code": "FOREIGN KEY (departamento_id) REFERENCES departamentos(id) ON DELETE SET NULL",
-    "options": [
-      "La columna 'departamento_id' DEBE ser opcional (NO debe tener la restricción NOT NULL).",
-      "La columna debe ser la Clave Primaria de la tabla hija.",
-      "La columna debe ser obligatoriamente de tipo VARCHAR.",
-      "La tabla padre debe llamarse obligatoriamente 'departamentos'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Si se especifica ON DELETE SET NULL, la columna de la clave foránea debe permitir valores nulos. Si estuviese declarada como NOT NULL, la acción fallaría al intentar asignar NULL."
-  },
-  {
-    "id": 78,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "¿Cuál es el comportamiento de la acción por defecto ON DELETE RESTRICT (o NO ACTION)?",
-    "code": "FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE RESTRICT",
-    "options": [
-      "Impide la eliminación de una categoría padre si existen productos hijos que dependen de ella.",
-      "Elimina todos los productos de esa categoría en cascada.",
-      "Asigna valor 0 a la clave foránea de los productos.",
-      "Renombra la categoría automáticamente."
-    ],
-    "correctAnswer": 0,
-    "explanation": "RESTRICT (y NO ACTION) garantiza la integridad referencial bloqueando y rechazando cualquier intento de eliminar un registro padre que tenga registros hijos asociados."
-  },
-  {
-    "id": 79,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 80,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 81,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 82,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 83,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 84,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 85,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 86,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 87,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 88,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 89,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 90,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 91,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 92,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 93,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 94,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 95,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 96,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 97,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 98,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 99,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 100,
-    "category": "REFERENTIAL_ACTIONS",
-    "categoryLabel": "INTEGRIDAD REFERENCIAL",
-    "difficulty": "hard",
-    "level": 4,
-    "question": "Evalúa el efecto de ON UPDATE CASCADE en la siguiente definición:",
-    "code": "FOREIGN KEY (autor_id) REFERENCES autores(id) ON UPDATE CASCADE",
-    "options": [
-      "Si cambia el valor de la clave primaria 'id' en un autor, el valor de 'autor_id' en sus libros asociados se actualiza automáticamente.",
-      "Impide que se pueda modificar el id del autor.",
-      "Elimina los libros cuando se actualiza el autor.",
-      "Convierte la clave primaria del autor en NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ON UPDATE CASCADE actualiza automáticamente la clave foránea en la tabla hija cuando el valor de la clave primaria referenciada es modificado en la tabla padre."
-  },
-  {
-    "id": 101,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "¿Por qué es highly recomendable asignar un nombre explícito a las restricciones utilizando la cláusula CONSTRAINT?",
-    "code": "CONSTRAINT pk_estudiante_curso PRIMARY KEY (estudiante_id, curso_id),\nCONSTRAINT chk_nota CHECK (nota >= 0 AND nota <= 10)",
-    "options": [
-      "Permite referenciar y eliminar o modificar la restricción de forma precisa mediante ALTER TABLE DROP CONSTRAINT <nombre>.",
-      "Es obligatorio para que la clave primaria funcione.",
-      "Aumenta la velocidad de ejecución de las sentencias SELECT.",
-      "Evita que la tabla ocupe espacio en disco."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Asignar nombres explícitos a las restricciones (CONSTRAINT nombre_restriccion TYPE) permite gestionarlas, deshabilitarlas o eliminarlas fácilmente con ALTER TABLE DROP CONSTRAINT sin depender de nombres generados por el SGBD."
-  },
-  {
-    "id": 102,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Analiza la siguiente tabla con clave primaria compuesta. ¿Qué combinaciones de datos serán RECHAZADAS por duplicidad?",
-    "code": "CREATE TABLE inscripciones (\n    alumno_id INT,\n    materia_id INT,\n    semestre VARCHAR(10),\n    PRIMARY KEY (alumno_id, materia_id)\n);",
-    "options": [
-      "Intentar insertar la fila (101, 50, '2026-1') si ya existe previamente la fila (101, 50, '2025-2').",
-      "Intentar insertar la fila (101, 51, '2026-1') cuando existe (101, 50, '2026-1').",
-      "Intentar insertar la fila (102, 50, '2026-1') cuando existe (101, 50, '2026-1').",
-      "Todas las opciones anteriores son permitidas."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La Clave Primaria Compuesta PRIMARY KEY (alumno_id, materia_id) exige unicidad en la COMBINACIÓN de ambos valores. El par (101, 50) no puede repetirse independientemente del valor en 'semestre'."
-  },
-  {
-    "id": 103,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n3 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_3 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_3 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 104,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n4 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_4 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_4 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 105,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n5 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_5 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_5 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 106,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n6 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_6 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_6 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 107,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n7 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_7 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_7 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 108,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n8 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_8 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_8 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 109,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n9 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_9 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_9 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 110,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n10 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_10 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_10 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 111,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n11 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_11 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_11 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 112,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n12 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_12 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_12 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 113,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n13 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_13 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_13 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 114,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n14 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_14 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_14 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 115,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n15 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_15 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_15 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 116,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n16 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_16 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_16 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 117,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n17 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_17 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_17 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 118,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n18 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_18 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_18 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 119,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n19 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_19 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_19 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 120,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n20 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_20 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_20 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 121,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n21 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_21 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_21 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 122,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n22 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_22 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_22 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 123,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n23 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_23 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_23 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 124,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n24 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_24 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_24 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 125,
-    "category": "NAMED_CONSTRAINTS",
-    "categoryLabel": "CONSTRAINTS NOMBRADAS",
-    "difficulty": "hard",
-    "level": 5,
-    "question": "Examina la sintaxis DDL con restricciones nombradas:",
-    "code": "CREATE TABLE proyectos_n25 (\n    id INT,\n    codigo VARCHAR(20),\n    CONSTRAINT pk_proy_25 PRIMARY KEY (id),\n    CONSTRAINT uq_cod_25 UNIQUE (codigo)\n);",
-    "options": [
-      "Define explícitamente la clave primaria 'pk_proy' y la restricción de unicidad 'uq_cod'.",
-      "Crea dos claves primarias en la misma tabla.",
-      "Sintaxis errónea por usar comas entre CONSTRAINT.",
-      "La restricción UNIQUE no puede tener nombre explícito."
-    ],
-    "correctAnswer": 0,
-    "explanation": "La declaración de restricciones nombradas a nivel de tabla es totalmente estándar y la mejor práctica en SQL DDL."
-  },
-  {
-    "id": 126,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "¿Cuál es la sintaxis SQL estándar para agregar una nueva columna 'telefono' a una tabla existente 'clientes'?",
-    "code": "ALTER TABLE clientes -- ¿Qué sintaxis completa esta operación?",
-    "options": [
-      "ADD COLUMN telefono VARCHAR(20);",
-      "INSERT COLUMN telefono VARCHAR(20);",
-      "CREATE COLUMN telefono VARCHAR(20);",
-      "UPDATE TABLE clientes ADD telefono;"
-    ],
-    "correctAnswer": 0,
-    "explanation": "La sintaxis DDL para modificar una estructura agregando una columna es: ALTER TABLE nombre_tabla ADD [COLUMN] nombre_columna tipo_dato [restricciones]."
-  },
-  {
-    "id": 127,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "¿Cuál de las siguientes sentencias permite agregar una restricción FOREIGN KEY nombrada a una tabla previamente existente?",
-    "code": "ALTER TABLE empleados ...",
-    "options": [
-      "ALTER TABLE empleados ADD CONSTRAINT fk_emp_dep FOREIGN KEY (dep_id) REFERENCES departamentos(id);",
-      "ALTER TABLE empleados CREATE FOREIGN KEY (dep_id) REFERENCES departamentos(id);",
-      "ALTER TABLE empleados ADD FOREIGN KEY (dep_id) INTO departamentos(id);",
-      "ALTER TABLE empleados UPDATE CONSTRAINT FOREIGN KEY (dep_id);"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Para incorporar una clave foránea a una tabla ya existente se utiliza ALTER TABLE <tabla> ADD CONSTRAINT <nombre> FOREIGN KEY (<columna>) REFERENCES <tabla_padre>(<columna_padre>)."
-  },
-  {
-    "id": 128,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "¿Cómo se elimina correctamente una restricción nombrada 'chk_edad_min' de la tabla 'usuarios'?",
-    "code": "ALTER TABLE usuarios ...",
-    "options": [
-      "ALTER TABLE usuarios DROP CONSTRAINT chk_edad_min;",
-      "ALTER TABLE usuarios DELETE CONSTRAINT chk_edad_min;",
-      "DROP CONSTRAINT chk_edad_min FROM usuarios;",
-      "ALTER TABLE usuarios REMOVE CHECK chk_edad_min;"
-    ],
-    "correctAnswer": 0,
-    "explanation": "La eliminación de una restricción nombrada se efectúa mediante ALTER TABLE <tabla> DROP CONSTRAINT <nombre_restriccion>."
-  },
-  {
-    "id": 129,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a4 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 130,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a5 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 131,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a6 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 132,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a7 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 133,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a8 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 134,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a9 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 135,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a10 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 136,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a11 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 137,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a12 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 138,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a13 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 139,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a14 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 140,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a15 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 141,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a16 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 142,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a17 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 143,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a18 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 144,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a19 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 145,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a20 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 146,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a21 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 147,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a22 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 148,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a23 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 149,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a24 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 150,
-    "category": "ALTER_TABLE",
-    "categoryLabel": "ALTER TABLE",
-    "difficulty": "hard",
-    "level": 6,
-    "question": "Analiza la siguiente sentencia DDL de modificación de estructura:",
-    "code": "ALTER TABLE productos_a25 DROP COLUMN codigo_barras;",
-    "options": [
-      "Elimina físicamente la columna 'codigo_barras' y todos sus datos de la tabla 'productos'.",
-      "Elimina la tabla 'productos' por completo.",
-      "Borra solo el índice de la columna 'codigo_barras'.",
-      "Renombra la columna a NULL."
-    ],
-    "correctAnswer": 0,
-    "explanation": "ALTER TABLE ... DROP COLUMN destruye la columna especificada y remueve los datos asociados a ella dentro de la tabla."
-  },
-  {
-    "id": 151,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
+    "category": "EXECUTION_ORDER",
+    "categoryLabel": "ORDEN DE EJECUCIÓN",
     "difficulty": "expert",
-    "level": 7,
-    "question": "Se tienen tres tablas relacionadas: 'paises' (padre) -> 'provincias' (hija de paises) -> 'ciudades' (hija de provincias). ¿En qué orden DEBEN ELIMINARSE las tablas con DROP TABLE para evitar errores de clave foránea?",
-    "code": "paises <- provincias <- ciudades",
+    "level": 9,
+    "question": "🎯 RETO DDL: Se requiere diseñar el esquema para un sistema bancario con 'clientes' y 'cuentas'. ¿Cuál de los siguientes scripts es 100% libre de errores de ejecución?",
+    "code": "-- Opciones de scripts SQL DDL completos",
     "options": [
-      "1º ciudades, 2º provincias, 3º paises",
-      "1º paises, 2º provincias, 3º ciudades",
-      "1º provincias, 2º ciudades, 3º paises",
-      "El orden de eliminación no afecta a las claves foráneas."
+      "CREATE TABLE clientes (id INT PRIMARY KEY, nombre VARCHAR(100));\nCREATE TABLE cuentas (id INT PRIMARY KEY, cliente_id INT REFERENCES clientes(id));",
+      "CREATE TABLE cuentas (id INT PRIMARY KEY, cliente_id INT REFERENCES clientes(id));\nCREATE TABLE clientes (id INT PRIMARY KEY, nombre VARCHAR(100));",
+      "CREATE TABLE clientes (id INT PRIMARY KEY, nombre VARCHAR(100));\nCREATE TABLE cuentas (id INT PRIMARY KEY, cliente_id INT PRIMARY KEY REFERENCES clientes(id));",
+      "CREATE TABLE clientes (id INT PRIMARY KEY, cliente_id INT REFERENCES cuentas(id));\nCREATE TABLE cuentas (id INT PRIMARY KEY);"
     ],
     "correctAnswer": 0,
-    "explanation": "Al eliminar tablas con relaciones de integridad referencial, se debe eliminar primero la tabla más HIJA ('ciudades') y al final la tabla PADRE principal ('paises'), procediendo desde las hojas hasta la raíz del árbol de dependencias."
-  },
-  {
-    "id": 152,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "En el mismo escenario de dependencias (paises -> provincias -> ciudades), ¿en qué orden DEBEN CREARSE las tablas con CREATE TABLE?",
-    "code": "paises -> provincias -> ciudades",
-    "options": [
-      "1º paises, 2º provincias, 3º ciudades",
-      "1º ciudades, 2º provincias, 3º paises",
-      "1º provincias, 2º paises, 3º ciudades",
-      "Cualquier orden es válido siempre."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Durante la creación, las tablas PADRE ('paises') deben construirse primero para que sus claves primarias puedan ser referenciadas por las tablas HIJAS ('provincias' y posteriormente 'ciudades')."
-  },
-  {
-    "id": 153,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "¿Cuál es la diferencia fundamental entre ejecutar DROP TABLE usuarios; frente a ALTER TABLE usuarios DROP COLUMN correo;?",
-    "code": "Opción A: DROP TABLE usuarios;\nOpción B: ALTER TABLE usuarios DROP COLUMN correo;",
-    "options": [
-      "DROP TABLE destruye la tabla completa y toda su estructura; ALTER TABLE ... DROP COLUMN borra únicamente un atributo específico de la tabla.",
-      "DROP TABLE borra solo las filas dejando la tabla vacía.",
-      "ALTER TABLE DROP COLUMN borra la base de datos completa.",
-      "Ambas sentencias producen exactamente el mismo resultado."
-    ],
-    "correctAnswer": 0,
-    "explanation": "DROP TABLE destruye el objeto tabla completo de la base de datos. ALTER TABLE DROP COLUMN remueve una sola columna manteniendo la tabla y sus demás atributos."
-  },
-  {
-    "id": 154,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p4; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 155,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p5; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 156,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p6; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 157,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p7; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 158,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p8; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 159,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p9; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 160,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p10; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 161,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p11; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 162,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p12; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 163,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p13; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 164,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p14; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 165,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p15; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 166,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p16; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 167,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p17; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 168,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p18; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 169,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p19; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 170,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p20; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 171,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p21; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 172,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p22; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 173,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p23; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 174,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p24; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 175,
-    "category": "DROP_DEPENDENCIES",
-    "categoryLabel": "DROP Y DEPENDENCIAS",
-    "difficulty": "expert",
-    "level": 7,
-    "question": "Analiza la consecuencia de intentar ejecutar DROP TABLE en una tabla PADRE:",
-    "code": "DROP TABLE categorias_p25; -- Teniendo 'productos' haciendo FK hacia 'categorias'",
-    "options": [
-      "El motor rechazará la sentencia indicando que existen objetos dependientes (clave foránea activa).",
-      "Eliminará automáticamente la tabla 'productos' también.",
-      "Convertirá a la tabla 'productos' en tabla independiente sin avisar.",
-      "Renombrará la tabla a 'categorias_deleted'."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Impedir la destrucción de la tabla padre cuando existen referencias activas de clave foránea es un principio fundamental de integridad referencial en bases de datos relacionales."
-  },
-  {
-    "id": 176,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Identifica el error conceptual o de sintaxis en el siguiente bloque de código DDL:",
-    "code": "CREATE TABLE clientes (\n    id INT PRIMARY KEY,\n    email VARCHAR(100)\n);\n\nCREATE TABLE ventas (\n    id INT PRIMARY KEY,\n    cliente_id INT,\n    CONSTRAINT fk_cliente FOREIGN KEY (cliente_id)\n        REFERENCES clientes(id_cliente)\n);",
-    "options": [
-      "'clientes(id_cliente)' no existe en la tabla padre; la columna referenciada correcta es 'clientes(id)'.",
-      "No se puede nombrar una FK como 'fk_cliente'.",
-      "PRIMARY KEY debe ser de tipo VARCHAR en ambas tablas.",
-      "Falta la cláusula ON DELETE CASCADE obligatoriamente."
-    ],
-    "correctAnswer": 0,
-    "explanation": "'clientes' definió su clave como 'id'. La restricción FOREIGN KEY debe apuntar al nombre exacto de la columna que es Clave Primaria en la tabla padre."
-  },
-  {
-    "id": 177,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Encuentra la falla en la siguiente declaración de restricciones:",
-    "code": "CREATE TABLE facturas (\n    folio INT PRIMARY KEY,\n    total DECIMAL(10,2) CHECK (total > 0),\n    PRIMARY KEY (folio)\n);",
-    "options": [
-      "Se declara la Clave Primaria dos veces (una a nivel de columna y otra a nivel de tabla).",
-      "DECIMAL(10,2) no permite la restricción CHECK.",
-      "PRIMARY KEY no puede llamarse 'folio'.",
-      "Falta el nombre de la tabla en la restricción CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Una tabla no puede tener dos declaraciones de Clave Primaria (PRIMARY KEY (folio) está duplicado a nivel de columna y a nivel de tabla)."
-  },
-  {
-    "id": 178,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🎯 ELECCIÓN DE SENTENCIA: Se requiere definir la tabla 'cuentas' donde 'iban' sea clave primaria, 'saldo' no pueda ser negativo y 'moneda' tenga por defecto 'EUR'. ¿Cuál es la sentencia DDL correcta?",
-    "code": "Requisito: iban (PK), saldo (>=0), moneda (DEFAULT 'EUR')",
-    "options": [
-      "CREATE TABLE cuentas (iban VARCHAR(34) PRIMARY KEY, saldo DECIMAL(12,2) CHECK (saldo >= 0), moneda VARCHAR(3) DEFAULT 'EUR');",
-      "CREATE TABLE cuentas (iban VARCHAR(34) UNIQUE, saldo DECIMAL(12,2) DEFAULT 0, moneda VARCHAR(3) CHECK ('EUR'));",
-      "CREATE TABLE cuentas (iban VARCHAR(34) PRIMARY KEY, saldo DECIMAL(12,2) FOREIGN KEY, moneda VARCHAR(3) DEFAULT 'EUR');",
-      "CREATE TABLE cuentas (iban VARCHAR(34) NOT NULL, saldo DECIMAL(12,2) CHECK (saldo < 0), moneda VARCHAR(3) UNIQUE);"
-    ],
-    "correctAnswer": 0,
-    "explanation": "La primera opción define impecablemente 'iban' como PRIMARY KEY, aplica el CHECK (saldo >= 0) para evitar valores negativos y establece 'EUR' como DEFAULT para la columna 'moneda'."
-  },
-  {
-    "id": 179,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d4 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 180,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d5 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 181,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d6 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 182,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d7 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 183,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d8 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 184,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d9 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 185,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d10 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 186,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d11 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 187,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d12 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 188,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d13 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 189,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d14 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 190,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d15 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 191,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d16 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 192,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d17 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 193,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d18 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 194,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d19 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 195,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d20 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 196,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d21 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 197,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d22 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 198,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d23 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 199,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d24 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
-  },
-  {
-    "id": 200,
-    "category": "DDL_DEBUGGER",
-    "categoryLabel": "DDL DEBUGGER",
-    "difficulty": "expert",
-    "level": 8,
-    "question": "🐛 DDL DEBUGGER: Analiza la siguiente instrucción DDL defectuosa:",
-    "code": "ALTER TABLE usuarios_d25 ADD CONSTRAINT chk_val CHECK (edad > 0) UNIQUE (email);",
-    "options": [
-      "No se pueden mezclar las sintaxis de CHECK y UNIQUE dentro de una misma cláusula ADD CONSTRAINT.",
-      "ALTER TABLE no admite la palabra ADD CONSTRAINT.",
-      "CHECK debe ir escrito en minúsculas.",
-      "Falta la palabra COLUMN antes de CHECK."
-    ],
-    "correctAnswer": 0,
-    "explanation": "Cada restricción a nivel de tabla debe agregarse de manera independiente con su propia definición ADD CONSTRAINT <nombre> <TIPO> (...)."
+    "explanation": "La tabla 'clientes' debe crearse en primer lugar para que la clave primaria 'clientes(id)' esté disponible cuando 'cuentas' defina su clave foránea apuntando a ella."
   }
 ];
