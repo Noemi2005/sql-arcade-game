@@ -40,22 +40,18 @@
 
   </div>
 
-  <!-- Timer Section (50 Segundos Estrictos) -->
-  <div class="w-full bg-[#04030a] rounded-xl p-3 border border-slate-800 flex items-center gap-4">
-    <div class="font-arcade text-xs sm:text-sm whitespace-nowrap min-w-[85px] tracking-wider text-slate-200"
+  <!-- Timer Section (50 Segundos Estrictos - Barra Amarilla Alta Visibilidad) -->
+  <div class="w-full bg-[#04030a] rounded-xl p-3 border border-yellow-500/30 flex items-center gap-4">
+    <div class="font-arcade text-xs sm:text-sm whitespace-nowrap min-w-[85px] tracking-wider text-yellow-300 glow-text-yellow"
          [class.timer-urgent]="gameService.timeRemaining() <= 7">
       ⏱️ {{ gameService.timeRemaining() }}s
     </div>
 
-    <!-- Timer Progress Bar -->
-    <div class="w-full bg-[#060814] h-4 rounded-full overflow-hidden p-0.5 border border-cyan-500/30 shadow-[inset_0_0_8px_rgba(0,0,0,0.8)] flex items-center">
-      <div class="h-full rounded-full transition-[width] duration-1000 ease-linear shadow-[0_0_12px_rgba(0,240,255,0.6)]"
+    <!-- Timer Progress Bar Amarilla -->
+    <div class="w-full bg-slate-950 h-5 rounded-full overflow-hidden p-0.5 border-2 border-yellow-500/60 shadow-[inset_0_0_10px_rgba(0,0,0,0.9)] flex items-center">
+      <div class="h-full rounded-full transition-[width] duration-1000 ease-linear bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-400 shadow-[0_0_18px_#ffe600] border border-yellow-200"
            [style.width]="timerPercentage() + '%'"
-           [ngClass]="{
-             'bg-gradient-to-r from-emerald-400 via-cyan-400 to-[#00f0ff]': gameService.timeRemaining() > 12,
-             'bg-gradient-to-r from-amber-400 via-yellow-400 to-[#ffe600] shadow-[0_0_12px_rgba(255,230,0,0.6)]': gameService.timeRemaining() <= 12 && gameService.timeRemaining() > 7,
-             'bg-gradient-to-r from-pink-600 via-red-500 to-[#ff007a] shadow-[0_0_15px_rgba(255,0,122,0.9)] animate-pulse': gameService.timeRemaining() <= 7
-           }">
+           [class.animate-pulse]="gameService.timeRemaining() <= 7">
       </div>
     </div>
   </div>
