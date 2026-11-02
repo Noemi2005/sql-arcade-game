@@ -49,7 +49,7 @@ import { Question } from '../../models/question.model';
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shadow-[0_0_6px_rgba(0,255,156,0.6)]"></span>
           </div>
           <span class="text-[10px] sm:text-xs font-title font-bold text-cyan-400 uppercase tracking-widest bg-cyan-950/60 px-2.5 py-0.5 rounded border border-cyan-500/30">
-            ESQUEMA SQL DDL
+            CÓDIGO / ESQUEMA SQL
           </span>
         </div>
 

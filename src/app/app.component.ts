@@ -7,6 +7,7 @@ import { GameComponent } from './components/game/game.component';
 import { GameOverComponent } from './components/game-over/game-over.component';
 import { RecordsComponent } from './components/records/records.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { HrGameComponent } from './components/hr-game/hr-game.component';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +19,13 @@ import { CategoriesComponent } from './components/categories/categories.componen
     GameComponent,
     GameOverComponent,
     RecordsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    HrGameComponent
   ],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'SQL DDL ARCADE';
+  title = 'SQL ARCADE';
 
   constructor(public gameService: GameService) {}
 }

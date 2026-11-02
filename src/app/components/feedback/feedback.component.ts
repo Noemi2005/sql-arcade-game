@@ -51,10 +51,10 @@ import { GameService } from '../../services/game.service';
         </div>
       </div>
 
-      <!-- Technical DDL Explanation Box -->
+      <!-- Technical Explanation Box -->
       <div class="bg-slate-950/90 p-5 md:p-6 rounded-xl border border-slate-800/90 shadow-inner">
         <h3 class="text-xs sm:text-sm font-arcade text-cyan-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-          <span>📚 ANÁLISIS TÉCNICO SQL DDL</span>
+          <span>📚 ANÁLISIS TÉCNICO SQL</span>
         </h3>
         <p class="font-body text-base md:text-lg text-slate-200 leading-relaxed font-normal">
           {{ q.explanation }}

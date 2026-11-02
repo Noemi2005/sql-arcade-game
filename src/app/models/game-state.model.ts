@@ -1,4 +1,4 @@
-export type GameScreen = 'HOME' | 'GAME' | 'GAME_OVER' | 'RECORDS' | 'CATEGORIES';
+export type GameScreen = 'HOME' | 'GAME' | 'GAME_OVER' | 'RECORDS' | 'CATEGORIES' | 'HR_GAME';
 
 export interface GameStats {
   score: number;

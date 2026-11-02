@@ -9,19 +9,22 @@ export type QuestionCategory =
   | 'ALTER_TABLE'
   | 'DROP_DEPENDENCIES'
   | 'DDL_DEBUGGER'
-  | 'EXECUTION_ORDER';
+  | 'EXECUTION_ORDER'
+  | 'HR_DATABASE';
 
 export type QuestionDifficulty = 'easy' | 'medium' | 'hard' | 'expert';
 
 export interface Question {
   id: number;
-  category: QuestionCategory;
+  category: QuestionCategory | string;
   categoryLabel: string;
   difficulty: QuestionDifficulty;
   level: number;
   title?: string;
   question: string;
   code?: string;
+  imageUrl?: string;
+  imageAlt?: string;
   options: string[];
   correctAnswer: number;
   explanation: string;

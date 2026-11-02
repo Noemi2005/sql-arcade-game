@@ -3,8 +3,8 @@
   <!-- Main Centered Container (max-w-7xl mx-auto) -->
   <div class="w-full max-w-7xl mx-auto px-2 sm:px-6 flex flex-col items-center">
 
-    <!-- 1. TOP HUD (max-w-6xl mx-auto) -->
-    <header class="w-full max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 mb-10 bg-[#080614]/90 border border-[#00f0ff]/35 rounded-2xl p-4 sm:px-8 sm:py-4 backdrop-blur-md shadow-[0_0_25px_rgba(0,240,255,0.12)]">
+    <!-- 1. TOP HUD (max-w-[1100px] mx-auto) -->
+    <header class="w-full max-w-[1100px] mx-auto flex flex-wrap items-center justify-between gap-4 mb-10 bg-[#080614]/90 border border-[#00f0ff]/35 rounded-2xl p-4 sm:px-8 sm:py-4 backdrop-blur-md shadow-[0_0_25px_rgba(0,240,255,0.12)]">
       
       <!-- Controls -->
       <div class="flex items-center gap-3">
@@ -38,8 +38,8 @@
 
     </header>
 
-    <!-- 2. ARCADE STAGE (max-w-5xl mx-auto) -->
-    <main class="w-full max-w-5xl mx-auto arcade-stage p-8 sm:p-12 md:p-16 text-center flex flex-col items-center justify-center my-6 relative overflow-hidden space-y-10 sm:space-y-12">
+    <!-- 2. ARCADE STAGE (max-w-[1100px] mx-auto) -->
+    <main class="w-full max-w-[1100px] mx-auto arcade-stage p-8 sm:p-12 md:p-16 text-center flex flex-col items-center justify-center my-6 relative overflow-hidden space-y-10 sm:space-y-12">
       
       <!-- Technical Corner Accents -->
       <div class="tech-corner tech-corner-tl"></div>
@@ -54,14 +54,13 @@
       <!-- INSERT COIN INDICATOR -->
       <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#04030a]/90 border border-[#ff007a]/60 text-[#ff007a] font-arcade text-xs tracking-widest shadow-[0_0_20px_rgba(255,0,122,0.3)] animate-coin-pulse">
         <span class="w-2.5 h-2.5 rounded-full bg-[#00ff9c] animate-led-blink"></span>
-        <span>● INSERT COIN • SQL DDL CHALLENGE</span>
+        <span>● INSERT COIN • SQL ARCADE CHALLENGE</span>
       </div>
 
       <!-- LOGO CENTRAL MULTILÍNEA CENTRADO -->
       <div class="space-y-4">
         <h1 class="text-5xl sm:text-7xl lg:text-8xl font-title font-black tracking-tight text-white uppercase leading-none drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)]">
-          SQL <span class="text-[#ff007a] glow-text-pink">DDL</span><br/>
-          <span class="text-[#00f0ff] glow-text-cyan">ARCADE</span>
+          SQL <span class="text-[#00f0ff] glow-text-cyan">ARCADE</span>
         </h1>
         
         <div class="pt-3 flex items-center justify-center gap-4">
@@ -99,7 +98,7 @@
             <span class="text-xl">⏱️</span>
             <span class="font-arcade text-xs text-[#ffe600] glow-text-yellow">TIME</span>
           </div>
-          <span class="text-2xl font-title font-black text-white tracking-widest">50s</span>
+          <span class="text-2xl font-title font-black text-white tracking-widest">60s</span>
         </div>
 
         <div class="bg-[#05030a]/95 border border-[#00f0ff]/50 p-6 rounded-2xl flex flex-col items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.5)]">
@@ -114,8 +113,8 @@
 
     </main>
 
-    <!-- 3. MAIN MENU (max-w-5xl mx-auto) -->
-    <nav class="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 my-10">
+    <!-- 3. MAIN MENU (max-w-[1100px] mx-auto) -->
+    <nav class="w-full max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 my-10">
       
       <!-- Card 1: RECORDS -->
       <div (click)="gameService.goToRecords()" class="arcade-menu-card arcade-menu-card-yellow group">
@@ -137,7 +136,7 @@
         </div>
         <div>
           <h2 class="text-xl font-title font-bold text-white mb-1">NIVELES</h2>
-          <p class="text-xs text-slate-400 font-body">Explora los 10 niveles DDL</p>
+          <p class="text-xs text-slate-400 font-body">Explora los niveles de SQL</p>
         </div>
       </div>
 
@@ -155,9 +154,54 @@
 
     </nav>
 
+    <!-- 4. SECCIÓN ESPECIAL: CARD PRACTICAR CON BD RECURSOS HUMANOS (max-w-[1100px] mx-auto) -->
+    <div class="w-full max-w-[1100px] mx-auto my-4">
+      <div 
+        (click)="gameService.goToHrGame()" 
+        class="relative overflow-hidden p-6 sm:p-8 md:p-9 rounded-3xl bg-gradient-to-r from-[#05111d] via-[#091b29] to-[#05111d] border-2 border-[#00f0ff]/60 hover:border-[#00f0ff] cursor-pointer group transition-all duration-300 shadow-[0_0_30px_rgba(0,240,255,0.2)] hover:shadow-[0_0_40px_rgba(0,240,255,0.4)]">
+        
+        <!-- Glowing background accent -->
+        <div class="absolute -right-16 -top-16 w-56 h-56 bg-[#00f0ff]/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+        <div class="absolute -left-16 -bottom-16 w-56 h-56 bg-[#00ff9c]/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 relative z-10 py-1">
+          
+          <div class="flex items-center gap-5 text-left flex-1">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#030914] border border-[#00f0ff]/50 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-[0_0_20px_rgba(0,240,255,0.3)] shrink-0">
+              💼
+            </div>
+            
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="font-arcade text-[10px] text-[#00f0ff] border border-[#00f0ff]/50 px-3 py-1 rounded tracking-widest bg-cyan-950/60 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                  MODO INTERACTIVO
+                </span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-title font-extrabold text-white group-hover:text-[#00f0ff] transition-colors leading-tight">
+                PRACTICAR CON BD RECURSOS HUMANOS
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-300 font-body max-w-xl leading-relaxed">
+                Resuelve preguntas y desafíos SQL consultando el diagrama relacional de Recursos Humanos en pantalla dividida. Con niveles de dificultad progresivos.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center sm:items-end justify-center gap-2.5 w-full md:w-auto shrink-0 my-auto py-2">
+            <button 
+              class="w-full sm:w-auto min-w-[210px] font-arcade text-xs text-white uppercase tracking-wider py-4 px-8 rounded-2xl bg-gradient-to-r from-[#ff007a] to-[#c4005c] hover:from-[#ff1a8c] hover:to-[#e6006e] border-2 border-[#ff66b2] shadow-[0_0_25px_rgba(255,0,122,0.45)] hover:shadow-[0_0_35px_rgba(255,0,122,0.7)] group-hover:scale-105 transition-all duration-200 cursor-pointer flex items-center justify-center">
+              <span>PRACTICAR AHORA</span>
+            </button>
+            <span class="font-code text-[11px] text-cyan-300/80 tracking-wider">Fácil • Medio • Difícil • Experto</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="mt-8 mb-4 text-xs font-code text-slate-500 tracking-widest uppercase text-center">
-      SQL DDL ARCADE • SENIOR EDITION • HIGH SCORE CHALLENGE
+      SQL ARCADE • SENIOR EDITION • HIGH SCORE CHALLENGE
     </footer>
 
   </div>
@@ -171,7 +215,7 @@
         <span class="text-2xl">🕹️</span>
         <div>
           <h2 class="text-xl font-title font-bold text-white glow-text-pink">REGLAS DEL ARCADE</h2>
-          <p class="text-xs font-code text-[#00f0ff]">SQL DDL CHALLENGE MANUAL</p>
+          <p class="text-xs font-code text-[#00f0ff]">SQL ARCADE MANUAL</p>
         </div>
       </div>
 
@@ -188,7 +232,7 @@
 
         <div class="bg-[#04030a]/90 p-4 rounded-2xl border border-[#00f0ff]/40 space-y-1">
           <span class="font-arcade text-xs text-[#00f0ff]">⚡ CONTROL MANUAL</span>
-          <p class="text-slate-300">Tras responder o agotarse el tiempo, puedes leer detenidamente el análisis técnico DDL y avanzar presionando la tecla [ENTER] o el botón de avanzar.</p>
+          <p class="text-slate-300">Tras responder o agotarse el tiempo, puedes leer detenidamente el análisis técnico y avanzar presionando la tecla [ENTER] o el botón de avanzar.</p>
         </div>
       </div>
 

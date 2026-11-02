@@ -1,14 +1,15 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { interval, Subscription, timer } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Question } from '../models/question.model';
+import { Question, QuestionDifficulty } from '../models/question.model';
 import { GameScreen } from '../models/game-state.model';
 import { QuestionService } from './question.service';
 import { SoundService } from './sound.service';
 import { StorageService } from './storage.service';
 
 const INITIAL_LIVES = 3;
-const DEFAULT_TIME_LIMIT = 50; // Temporizador estricto de 50 segundos por pregunta
+const DEFAULT_TIME_LIMIT = 60; // Temporizador de 60 segundos por pregunta para modo estándar
+const HR_TIME_LIMIT = 180; // Temporizador de 180 segundos por pregunta para modo BD HR
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ const DEFAULT_TIME_LIMIT = 50; // Temporizador estricto de 50 segundos por pregu
 export class GameService {
   // Signals para el estado del juego
   screen = signal<GameScreen>('HOME');
+  gameMode = signal<'STANDARD' | 'HR'>('STANDARD');
+  hrDifficulty = signal<QuestionDifficulty | 'all'>('all');
   
   questions = signal<Question[]>([]);
   currentIndex = signal<number>(0);
@@ -68,6 +71,7 @@ export class GameService {
   ) {}
 
   startNewGame(): void {
+    this.gameMode.set('STANDARD');
     this.soundService.playCoin();
     this.score.set(0);
     this.lives.set(INITIAL_LIVES);
@@ -88,13 +92,45 @@ export class GameService {
     this.startTimer();
   }
 
+  startHrGame(difficulty: QuestionDifficulty | 'all' = 'all'): void {
+    this.gameMode.set('HR');
+    this.hrDifficulty.set(difficulty);
+    this.soundService.playCoin();
+    this.score.set(0);
+    this.lives.set(INITIAL_LIVES);
+    this.streak.set(0);
+    this.maxStreak.set(0);
+    this.questionsAnswered.set(0);
+    this.correctAnswersCount.set(0);
+    this.currentIndex.set(0);
+
+    const pool = this.questionService.getHrQuestions(difficulty);
+    this.questions.set(pool);
+    this.level.set(pool[0]?.level || 1);
+
+    this.selectedOption.set(null);
+    this.isAnswerSubmitted.set(false);
+
+    this.screen.set('HR_GAME');
+    this.startTimer();
+  }
+
+  restartGame(): void {
+    if (this.gameMode() === 'HR') {
+      this.startHrGame(this.hrDifficulty());
+    } else {
+      this.startNewGame();
+    }
+  }
+
   /**
    * Inicia el temporizador de 50 segundos con RxJS
    */
   startTimer(): void {
     this.clearAllTimers();
     const currentQ = this.currentQuestion();
-    const limit = currentQ?.timeLimit || DEFAULT_TIME_LIMIT;
+    const defaultLimit = this.gameMode() === 'HR' ? HR_TIME_LIMIT : DEFAULT_TIME_LIMIT;
+    const limit = currentQ?.timeLimit || defaultLimit;
     this.timeRemaining.set(limit);
     this.timerActive.set(true);
 
@@ -158,8 +194,10 @@ export class GameService {
         this.maxStreak.set(newStreak);
       }
 
-      // Cálculo del bono de velocidad con base en 50 segundos
-      const speedBonus = Math.floor((this.timeRemaining() / DEFAULT_TIME_LIMIT) * 50);
+      // Cálculo del bono de velocidad con base en el límite de tiempo
+      const defaultLimit = this.gameMode() === 'HR' ? HR_TIME_LIMIT : DEFAULT_TIME_LIMIT;
+      const questionLimit = currentQ.timeLimit || defaultLimit;
+      const speedBonus = Math.floor((this.timeRemaining() / questionLimit) * 50);
       this.lastSpeedBonus.set(speedBonus);
 
       // Multiplicador por racha
@@ -229,6 +267,12 @@ export class GameService {
       this.triggerGameOver();
     } else {
       this.currentIndex.set(nextIdx);
+      if (this.gameMode() === 'HR') {
+        const nextQ = this.questions()[nextIdx];
+        if (nextQ && nextQ.level) {
+          this.level.set(nextQ.level);
+        }
+      }
       this.selectedOption.set(null);
       this.isAnswerSubmitted.set(false);
       this.startTimer();
@@ -262,5 +306,9 @@ export class GameService {
 
   goToCategories(): void {
     this.screen.set('CATEGORIES');
+  }
+
+  goToHrGame(difficulty: QuestionDifficulty | 'all' = 'all'): void {
+    this.startHrGame(difficulty);
   }
 }

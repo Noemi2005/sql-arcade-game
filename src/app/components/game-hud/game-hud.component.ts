@@ -16,7 +16,8 @@ export class GameHudComponent {
 
   timerPercentage = computed(() => {
     const remaining = this.gameService.timeRemaining();
-    const limit = this.gameService.currentQuestion()?.timeLimit || 50;
+    const defaultLimit = this.gameService.gameMode() === 'HR' ? 180 : 60;
+    const limit = this.gameService.currentQuestion()?.timeLimit || defaultLimit;
     return Math.max(0, Math.min(100, (remaining / limit) * 100));
   });
 
